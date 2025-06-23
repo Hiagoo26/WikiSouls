@@ -1,0 +1,121 @@
+@charset 'UTF-8';
+@font-face {
+    font-family: DSsb;
+    src: url(assets/fonts/OptimusPrincepsSemiBold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: Sans;
+    src: url(assets/fonts/OpenSans-Regular.ttf) format(truetype);
+}
+
+:root {
+    --firstcolor: #AB966F;
+    --primarycolor: #161615;
+    --font1: DSsb;
+    --fonttext: 'Sans';
+}
+
+
+/*Header*/
+body{
+    margin: auto;
+    background-color: var(--primarycolor);
+}
+
+
+.header {
+    display: flex;
+    background-color: var(--primarycolor);
+    border-bottom: 5px solid var(--firstcolor);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    flex: 1;
+    color: white;
+    font-family: var(--font1);
+    font-size: 600;
+    text-shadow: 2px 2px 3px var(--firstcolor);
+    font-size: 2em;
+    margin-left: 200px;
+}
+
+
+.bonfire {
+    height: 60px;
+    width: 60px;
+    padding: 30px;
+    margin-right: 1225px;
+}
+
+
+/*Main*/
+
+main {
+    margin-top: 250px;
+    justify-items: center;
+    align-items: end;
+    font-family: var(--fonttext);
+}
+
+#sub {  
+    color: white;
+    font-family: var(--font1);
+    font-size: 1.5em;
+}
+
+.container {
+    height: auto;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Dark souls 1*/
+.ds1 {
+    height: 300px;
+    width: 250px;
+    border: 4px solid var(--firstcolor);
+    border-radius: 20px;
+}
+
+
+/*Dark souls 2*/
+.ds2 {
+    height: 300px;
+    width: 250px;
+    border: 4px solid var(--firstcolor);
+    border-radius: 20px;
+}
+
+/*Dark Souls 3*/
+.ds3 {
+    height: 300px;
+    width: 250px;
+    border: 3px solid var(--firstcolor);
+    border-radius: 20px;
+}
+
+img {
+    height: 300px;
+    width: 250px;
+    border-radius: 20px;
+}
+
+/*Footer*/
+
+footer {
+    margin-top: 250px;
+    border-top: 5px solid var(--firstcolor);
+}
+
+.foot {
+    text-align: center;
+    color: white;
+}
+
+.link {
+    color: white;
+}
