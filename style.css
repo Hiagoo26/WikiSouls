@@ -5,15 +5,15 @@
 }
 
 @font-face {
-    font-family: Sans;
-    src: url(assets/fonts/OpenSans-Regular.ttf) format(truetype);
+    font-family: Noto;
+    src: url(assets/fonts/NotoSansJP-VariableFont_wght.ttf) format(truetype);
 }
 
 :root {
     --firstcolor: #AB966F;
     --primarycolor: #161615;
     --font1: DSsb;
-    --fonttext: 'Sans';
+    --fonttext: Noto;
 }
 
 
@@ -33,37 +33,48 @@ body{
 }
 
 .title {
-    flex: 1;
     color: white;
     font-family: var(--font1);
     font-size: 600;
     text-shadow: 2px 2px 3px var(--firstcolor);
     font-size: 2em;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 
 .bonfire {
+    flex: 1;
     height: 60px;
     width: 60px;
     padding: 30px;
-    margin-right: 1225px;
+    margin-right: 1190px;
+    border: none;
 }
 
 
 /*Main*/
 
-main {
-    margin-top: 250px;
+#main {
+    margin-top: 200px;
     justify-items: center;
     align-items: end;
     font-family: var(--fonttext);
+    transition: filter 0.4s ease;
+    position: relative;
+    z-index: 1;
 }
 
 #sub {  
     color: white;
     font-family: var(--font1);
     font-size: 1.5em;
+}
+
+.text {
+    font-family: var(--fonttext);
+    color: white;
+    font-size: 1em;
+    margin-bottom: 50px;
 }
 
 .container {
@@ -98,16 +109,16 @@ main {
     border-radius: 20px;
 }
 
-img {
+.img {
     height: 300px;
     width: 250px;
     border-radius: 20px;
 }
 
-/*Footer*/
 
+/*Footer*/
 footer {
-    margin-top: 250px;
+    margin-top: 160px;
     border-top: 5px solid var(--firstcolor);
 }
 
@@ -117,5 +128,12 @@ footer {
 }
 
 .link {
+    color: var(--firstcolor);
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: #AB966F;
     color: white;
+    transition: 1s;
 }
