@@ -11,7 +11,8 @@ main {
 .dsr {
     text-align: center;
     font-family: var(--font1);
-    color: white; 
+    color: white;
+    margin-top: 50px;
 }
 
 .textds1 {
@@ -26,7 +27,7 @@ span {
     color: var(--firstcolor);
 }
 
-/*Video*/
+/* Video */
 
 .video {
     width: 100%;
@@ -45,13 +46,15 @@ span {
     border: 2px solid var(--firstcolor);
 }
 
+/* Linha */
+
 hr {
     background-color: var(--firstcolor);
     height: 2px;
     border: none;
 }
 
-/*Opçoes*/
+/* Opçoes */
 
 aside {
     margin-top: 50px;
