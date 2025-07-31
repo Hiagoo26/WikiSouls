@@ -27,10 +27,6 @@ Este projeto está me ajudando a praticar conceitos como:
   
 ## 🚀 Funcionalidades 
 
-- HTML5
-- CSS3
-- JavaScript (em progresso)
-
 - Estrutura básica com HTML
 - Estilização com CSS (animações,efeitos visuais e em breve responsividade)
 - Sistema de navegação por categorias (chefes, inimigos, armas etc.)
