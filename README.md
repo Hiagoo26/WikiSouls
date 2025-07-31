@@ -1,6 +1,6 @@
 # 🧙‍♂️ Projeto WikiSouls
 
-Um projeto inspirado no universo de **Dark Souls**, trazendo uma pequena enciclopédia com informações do jogo.
+Um projeto inspirado no universo de **Dark Souls**, trazendo uma pequena enciclopédia com informações dos jogos.
 
 ## 📈 Status do projeto
 
@@ -19,21 +19,22 @@ Este projeto está me ajudando a praticar conceitos como:
 - Interatividade com JavaScript (em breve, modais e navegação dinâmica)
 
 ---
-
-## 🚀 Funcionalidades
-
-- Estrutura básica com HTML
-- Estilização com CSS (animações,efeitos visuais e em breve responsividade)
-- Sistema de navegação por categorias (chefes, inimigos, armas etc.)
-- *Modals* com JavaScript (em desenvolvimento)
-
----
-
 ## 💻 Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript (em progresso)
+  
+## 🚀 Funcionalidades 
+
+- HTML5
+- CSS3
+- JavaScript (em progresso)
+
+- Estrutura básica com HTML
+- Estilização com CSS (animações,efeitos visuais e em breve responsividade)
+- Sistema de navegação por categorias (chefes, inimigos, armas etc.)
+- *Modals* com JavaScript (em desenvolvimento)
 
 ---
 
