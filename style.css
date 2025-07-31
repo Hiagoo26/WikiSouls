@@ -17,12 +17,12 @@
 }
 
 
-/*Header*/
 body{
     margin: auto;
     background-color: var(--primarycolor);
 }
 
+/*Header*/
 
 .header {
     display: flex;
