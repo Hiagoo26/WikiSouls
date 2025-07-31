@@ -19,7 +19,7 @@ main {
     text-align: justify;
     font-size: 1em;
     font-family: var(--fonttext);
-
+    margin: 0 15px;
 }
 
 span {
@@ -43,6 +43,12 @@ span {
     width: 90%;
     height: 90%;
     border: 2px solid var(--firstcolor);
+}
+
+hr {
+    background-color: var(--firstcolor);
+    height: 2px;
+    border: none;
 }
 
 /*Opçoes*/
@@ -81,7 +87,7 @@ img {
     width: 150px;
 }
 
-.links > p, img {
+.links > p, .ds1images {
     transition: all 0.7s ease;
     opacity: 0.6;
 }

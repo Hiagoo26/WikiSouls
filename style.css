@@ -28,8 +28,9 @@ body{
     display: flex;
     background-color: var(--primarycolor);
     border-bottom: 5px solid var(--firstcolor);
-    justify-content: space-between;
     align-items: center;
+    position: relative;
+    height: 120px;
 }
 
 .title {
@@ -43,12 +44,13 @@ body{
 
 
 .bonfire {
-    flex: 1;
     height: 60px;
     width: 60px;
-    padding: 30px;
-    margin-right: 1190px;
     border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
