@@ -2,8 +2,6 @@
 
 Um projeto inspirado no universo de **Dark Souls**, trazendo uma pequena enciclopédia com informações do jogo.
 
----
-
 ## 📈 Status do projeto
 
 ![Status](https://img.shields.io/badge/Status-Em%20andamento-yellow)
