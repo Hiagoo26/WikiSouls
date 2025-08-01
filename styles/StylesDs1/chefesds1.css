@@ -40,3 +40,67 @@
     opacity: 1;
     text-decoration: underline;
 }
+
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--primarycolor);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 0 20px black;
+    z-index: 10000;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--firstcolor);
+}
+
+/* Modal fog */
+.modal::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%);
+    background-size: 50% 50%;
+    animation: fog 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(30px);
+}
+
+@keyframes fog {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-25%, -10%); }
+    100% { transform: translate(0, 0); }
+    
+}

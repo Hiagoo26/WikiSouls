@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../styles/ds1.css">
     <link rel="stylesheet" href="../../styles/StylesDs1/Personagens.css">
@@ -26,7 +27,7 @@
             <article>
                 <h2 class="dsr">CHEFES</h2>
                 <aside class="chefesbase">
-                    <button class="chefes">
+                    <button class="chefes" onclick="abrirModal('gwyn')">
                         <img src="../../assets/images/gwyn.jpg" alt="gwyn" class="ds1images">
                         <p>Gwyn, Lord of Cinder</p>
                     </button>
@@ -110,6 +111,10 @@
                         <img src="" alt="" class="ds1images">
                         <p>Ceaseless Discharge</p>
                     </button>
+                    <button class="chefes">
+                        <img src="" alt="Tauros Demon">
+                        <p>Tauros Demon</p>
+                    </button>
                 </aside>
                 <hr>
                 <h2 class="dsr">Chefes (Artorias of the Abyss)</h2>
@@ -137,5 +142,15 @@
     <footer>
         <p class="foot">Site desenvolvido por <a href="https://github.com/Hiagoo26" target="_blank" rel="external" class="link">Hiago</a></p>
     </footer>
+
+    <!-- Modal bosses -->
+     <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close" id="fechar"></i>
+            <div id="body-modal">
+        </div>
+     </div>
+
+     <script src="../../script.js"></script>
 </body>
 </html>
