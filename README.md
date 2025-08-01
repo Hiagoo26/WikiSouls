@@ -16,22 +16,21 @@ Este projeto está me ajudando a praticar conceitos como:
 
 - Organização de layout com HTML5
 - Estilização avançada com CSS3 (hover, animações, em breve responsividade)
-- Interatividade com JavaScript (em breve, modais e navegação dinâmica)
+- Interatividade com JavaScript (modais e navegação dinâmica)
 
 ---
 ## 💻 Tecnologias utilizadas
 
 - HTML5
 - CSS3
-- JavaScript (em progresso)
+- JavaScript
   
 ## 🚀 Funcionalidades 
 
 - Estrutura básica com HTML
 - Estilização com CSS (animações,efeitos visuais e em breve responsividade)
 - Sistema de navegação por categorias (chefes, inimigos, armas etc.)
-- *Modals* com JavaScript (em desenvolvimento)
-
+- *Modals* com JavaScript
 ---
 
 ## 📂 Como abrir o projeto
