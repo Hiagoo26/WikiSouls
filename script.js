@@ -31,7 +31,23 @@ const dadosChefes = {
         nome: "Asylum Demon (Demonio do Asilo)",
         nome2: "Asylum Demon",
         img: "../../assets/images/asylumdemon.jpg",
-
+        vida: "NG 813",
+        vidaNG: "NG+ 2,195",
+        almas: "NG 2k",
+        almasNG: "NG+ 10k",
+        desc: "O Asylum Demon é o primeiro chefe encontrado em Dark Souls. Ele representa o início da jornada do Escolhido, enfrentado ainda no Refúgio dos Mortos-Vivos. Apesar de ser um dos inimigos mais simples, é importante para apresentar as mecânicas do jogo.",
+        loc: "Refúgio dos Mortos-Vivos (Undead Asylum). Ele é encontrado logo no início do jogo. O primeiro encontro é opcional (você pode fugir), e o confronto real acontece logo depois de recuperar suas armas.",
+        titulo1: "Origem",
+        titulo2: "Ligação com os outros demônios",
+        titulo3: "Função no jogo",
+        titulo4: "Extras",
+        historia1: "O Asylum Demon é uma das criaturas demoníacas criadas a partir da alma do Demônio Estrangeiro (Stray Demon). Ele guarda o Refúgio dos Mortos-Vivos, onde os não-mortos são aprisionados até o fim dos tempos.",
+        historia2: "Faz parte de uma linhagem de demônios que inclui o Stray Demon (versão mais forte) e o Demon Firesage. Todos compartilham características físicas parecidas e provêm de uma mesma alma corrompida.",
+        historia3: "Ele é o teste inicial do jogador e introduz o conceito de chefes poderosos e arenas fechadas. A luta reforça o uso da estratégia e observação, elementos centrais da série.",
+        historia4: "Se derrotado no primeiro encontro (antes de recuperar as armas), ele deixa cair o Grande Martelo do Demônio. Mais tarde, você enfrenta o Stray Demon no mesmo local, acessando uma parte secreta do Asylum.",
+        dropimg: "",
+        dropimg2: "",
+        dropimg3: "",
     }
 
 };
