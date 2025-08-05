@@ -18,14 +18,14 @@ const dadosChefes = {
         titulo3: "Herança e Legado",
         titulo4: "Dark Souls II & III",
         historia1: "Unidas forças de três Lordes (Gwyn, Nito, Bruxa de Izalith), com aliados como Seath e Havel, destruíram os dragões usando relâmpagos, fogo e miasma.",
-        historia2: "Gwyn governava de Anor Londo. Presenteou Seath e estabeleceu a Cidade Anelar para os Pygmy Lords (e humanos), incluindo membros como Gwynevere, Gwyndolin, Filianore e Lloyd.",
-        historia3: "Criou seus cavaleiros mais leais e entregou anéis especiais a Orstein, Gough, Ciaran e Artorias.",
-        historia4: "Quando a chama começou a desaparecer, Gwyn sacrificou seu próprio poder, entrou na Primeira Chama e virou o Lorde das Cinzas, enquanto seu reino e cavaleiros sucumbiam.",
-        historia5: "Inspirou a profecia que guia o Chosen Undead a Lordran, com a missão de sacrificar-se ou negar a chama, gerando finais diferentes. Ele é reverenciado como pilar da Era do Fogo.",
-        historia6: "Em DSII seu nome se transforma em lenda (referido como o “Deus do Sol”), e só restam poucos milagres ligados a ele. No DSIII sua essência aparece na entidade “Soul of Cinder” como desafio final.", 
+        historia2: "Gwyn governava de Anor Londo. Presenteou Seath e estabeleceu a Cidade Anelar para os Pygmy Lords (e humanos), incluindo membros como Gwynevere, Gwyndolin, Filianore e Lloyd. <br> Criou seus cavaleiros mais leais e entregou anéis especiais a Orstein, Gough, Ciaran e Artorias. <br> Quando a chama começou a desaparecer, Gwyn sacrificou seu próprio poder, entrou na Primeira Chama e virou o Lorde das Cinzas, enquanto seu reino e cavaleiros sucumbiam.",
+        historia3: "Inspirou a profecia que guia o Chosen Undead a Lordran, com a missão de sacrificar-se ou negar a chama, gerando finais diferentes. Ele é reverenciado como pilar da Era do Fogo.",
+        historia4: "Em DSII seu nome se transforma em lenda (referido como o “Deus do Sol”), e só restam poucos milagres ligados a ele. No DSIII sua essência aparece na entidade “Soul of Cinder” como desafio final.", 
         dropimg: "../../assets/images/almagywn.webp",
         dropdesc: "Alma de Gwyn, Lorde das Cinzas",
-        dropchance: "Garantido"
+        dropchance: "Garantido",
+        fraquezas: "Parry(Contra-ataque) <br> Mágia <br> Status(Veneno e Toxina)",
+        resistencia: "Fogo <br> Eletricidade(Lightning)"
     },
     asylumdemon: {
         nome: "Asylum Demon (Demonio do Asilo)",
@@ -45,9 +45,17 @@ const dadosChefes = {
         historia2: "Faz parte de uma linhagem de demônios que inclui o Stray Demon (versão mais forte) e o Demon Firesage. Todos compartilham características físicas parecidas e provêm de uma mesma alma corrompida.",
         historia3: "Ele é o teste inicial do jogador e introduz o conceito de chefes poderosos e arenas fechadas. A luta reforça o uso da estratégia e observação, elementos centrais da série.",
         historia4: "Se derrotado no primeiro encontro (antes de recuperar as armas), ele deixa cair o Grande Martelo do Demônio. Mais tarde, você enfrenta o Stray Demon no mesmo local, acessando uma parte secreta do Asylum.",
-        dropimg: "",
-        dropimg2: "",
-        dropimg3: "",
+        dropimg: "../../assets/images/demongreathammer.webp",
+        dropimg2: "../../assets/images/BigPilgrimKey.webp",
+        dropimg3: "../../assets/images/humanidade.webp",
+        dropdesc: "Demon's Great Hammer",
+        dropdesc2: "Big Pilgrim's Key",
+        dropdesc3: "Humanity",
+        dropchance: "Garantido (Somente no primeiro encontro)",
+        dropchance2: "Garantido (Somente depois de falar com Oscar)",
+        dropchance3: "Garantido",
+        fraquezas: "Fogo <br> Magia <br> Bleed(Sangramento)",
+        resistencia: "Dano Físico <br> Poise alto"
     }
 
 };
@@ -114,8 +122,6 @@ function abrirModal(id) {
                 <li>
                     <strong style=" text-decoration: underline; color: var(--firstcolor);">${boss.titulo2}</strong>
                     <p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia2 ?? ""}</p>
-                    ${boss.historia3 ? `<p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia3}</p>` : ""}
-                    ${boss.historia4 ? `<p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia4}</p>` : ""}
                 </li>
             `;
         }
@@ -124,7 +130,7 @@ function abrirModal(id) {
             conteudoHtml += `
                 <li>
                     <strong style=" text-decoration: underline; color: var(--firstcolor);">${boss.titulo3}</strong>
-                    <p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia5 ?? ""}</p>
+                    <p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia3 ?? ""}</p>
                 </li>
             `;
         }
@@ -133,7 +139,7 @@ function abrirModal(id) {
             conteudoHtml += `
                 <li>
                     <strong style=" text-decoration: underline; color: var(--firstcolor);">${boss.titulo4}</strong>
-                    <p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia6 ?? ""}</p>
+                    <p style="margin-top: 5px; margin-bottom: 10px;">${boss.historia4 ?? ""}</p>
                 </li>
             `;
         }
@@ -142,32 +148,98 @@ function abrirModal(id) {
 
     }
 
-   if (boss.dropimg) {
+   if (boss.dropimg || boss.dropdesc || boss.dropchance) {
         conteudoHtml += `
             <hr>
-            <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Drop</h2>
-            <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
-                <tr>
-                    <!-- Imagem + descrição -->
-                    <td style="width: 70%; padding: 10px; vertical-align: middle;">
-                        <div style="display: flex; align-items: center; gap: 20px;">
-                            <img src="${boss.dropimg}" alt="Drop do ${boss.nome}" style="width: 100px; height: auto; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-                            <p style="margin: 0; font-size: 1em;">${boss.dropdesc}</p>
-                        </div>
-                    </td>
+            <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Drop</h2>            
+        `;
 
-                    <!-- Chance -->
-                    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-                        <div>
-                            <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
-                            <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance}</strong></p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        if (boss.dropimg && boss.dropdesc && boss.dropchance) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                    <p style="margin: 0; font-size: 1em;">${boss.dropdesc}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        if (boss.dropimg2 && boss.dropdesc2 && boss.dropchance2) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg2}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                <p style="margin: 0; font-size: 1em;">${boss.dropdesc2}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance2}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        if(boss.dropimg3 && boss.dropdesc3 && boss.dropchance3) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg3}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                    <p style="margin: 0; font-size: 1em;">${boss.dropdesc3}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance3}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+
+        }
+    }
+
+    if(boss.resistencia){
+        conteudoHtml += `
+            <hr> 
+            <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Resistências</h2>
+            <p>${boss.resistencia}</p>
         `;
     }
 
+    if(boss.fraquezas){
+        conteudoHtml += `
+            <hr> 
+            <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Fraquezas</h2>
+            <p>${boss.fraquezas}</p> 
+        `;
+    }
 
     bodymodal.innerHTML = conteudoHtml;
     modal.classList.remove("hidden");
