@@ -56,7 +56,45 @@ const dadosChefes = {
         dropchance3: "Garantido",
         fraquezas: "Fogo <br> Magia <br> Bleed(Sangramento)",
         resistencia: "Dano Físico <br> Poise alto"
+    },
+    
+    bellgargoyles: {
+        nome: "Bell Gargoyles (Gárgolas do Sino)",
+        nome2: "Bell Gargoyles",
+        img: "../../assets/images/gargolas.jpg",
+        vida: "NG 1000 & 480",
+        vidaNG: "NG+ 1500 & 1000",
+        almas: "NG 10k",
+        almasNG: "NG+ 50k",
+        desc: "As Bell Gargoyles ou Belfry Gargoyles são chefe e mini-chefe de Dark Souls, eles protegem o primeiro Sino.",
+        loc: "Oponente principal nos telhados da Undead Parish, Anor Londo, protegendo o primeiro Bell of Awakening. Também aparecem como mini-chefes dentro de Anor Londo.",
+        titulo1: "Criação",
+        titulo2: "Fim da era do fogo",
+        historia1: "Criados por magia divina para patrulhar e proteger locais importantes como Anor Londo.",
+        historia2: "Após o sacrifício de Gwyn para prolongar a Era do Fogo, os Gargoyles foram posicionados como teste ritualmente obrigatório para qualquer escolhido que tocasse o sino da igreja.",
+        dropimg: "../../assets/images/gargoyleaxe.webp",  
+        dropimg2: "../../assets/images/gargoylealabarda.webp",    
+        dropimg3: "../../assets/images/escudogargula.webp",    
+        dropimg4: "../../assets/images/helmogargula.webp",    
+        dropimg5: "../../assets/images/humanidadeg.webp",    
+        dropimg6: "../../assets/images/ossoregreso.png",
+        dropdesc: "Gargoyle Tail Axe",
+        dropdesc2: "Gargoyle's Halberd",
+        dropdesc3: "Gargoyle's Shield",
+        dropdesc4: "Gargoyle Helm",
+        dropdesc5: "Twin Humanities",
+        dropdesc6: "Homeward Bone",
+        dropchance: "Cortando o rabo da gárgula",
+        dropchance2: "3% (Garantido na última gárgula de Anor Londo)",
+        dropchance3: "3% (Garantido na última gárgula de Anor Londo)",
+        dropchance4: "3% (Garantido na última gárgula de Anor Londo)",
+        dropchance5: "Garantido",
+        dropchance6: "Garantido",
+        fraquezas: "Fogo <br> Raio(As de Anor Londo)",
+        resistencia: "Dano Físico <br> Mágia"
+
     }
+
 
 };
 
@@ -221,7 +259,75 @@ function abrirModal(id) {
                     </tr>
                 </table>
             `;
+        }
 
+        if(boss.dropimg4 && boss.dropdesc4 && boss.dropchance4) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg4}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                    <p style="margin: 0; font-size: 1em;">${boss.dropdesc4}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance4}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        if(boss.dropimg5 && boss.dropdesc5 && boss.dropchance5) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg5}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                    <p style="margin: 0; font-size: 1em;">${boss.dropdesc5}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance5}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        if(boss.dropimg6 && boss.dropdesc6 && boss.dropchance6) {
+            conteudoHtml += `
+                <table style="width: 100%; border-collapse: separate; border-spacing: 20px 10px; margin: 15px 0; background-color: #1e1e1e; border: 2px solid var(--firstcolor); border-radius: 10px; padding: 10px;">
+                    <tr>
+                        <td style="width: 70%; padding: 10px; vertical-align: middle;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="width: 80px; height: 80px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="${boss.dropimg6}" alt="Drop do ${boss.nome}" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                                </div>
+                                    <p style="margin: 0; font-size: 1em;">${boss.dropdesc6}</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: var(--firstcolor); font-family: var(--font1);">Chance</h4>
+                                <p style="margin: 0; font-size: 1.1em;"><strong>${boss.dropchance6}</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
         }
     }
 
