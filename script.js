@@ -28,7 +28,7 @@ const dadosChefes = {
         resistencia: "Fogo <br> Eletricidade(Lightning)"
     },
     asylumdemon: {
-        nome: "Asylum Demon (Demonio do Asilo)",
+        nome: "Asylum Demon (Demônio do Asilo)",
         nome2: "Asylum Demon",
         img: "../../assets/images/asylumdemon.jpg",
         vida: "NG 813",
@@ -92,8 +92,69 @@ const dadosChefes = {
         dropchance6: "Garantido",
         fraquezas: "Fogo <br> Raio(As de Anor Londo)",
         resistencia: "Dano Físico <br> Mágia"
+    },
 
-    }
+    caprademon: {
+        nome: "Capra Demon (Demônio Cabra)",
+        nome2: "Capra Demon",
+        img: "../../assets/images/capra.jpg",
+        vida: "NG 1,176",
+        vidaNG: "NG+ 2,940",
+        almas: "NG 6k",
+        almasNG: "NG+ 30k",
+        desc: "Grande demônio humanoide, o capra demon é um boss opcional q fica na parte de baixo de Undead Burg.",
+        loc: "Encontrado como chefe opcional na parte inferior da Undead Burg, após a luta contra o Taurus Demon, por uma porta com escada longa. Mais tarde, versões mais fracas dele — os Lesser Capra Demons — aparecem como inimigos comuns nas ruínas dos demônios (Demon Ruins).",
+        titulo1: "Origem",
+        historia1: "Demônio originário da Bed of Chaos, criados após a falha da Bruxa de Izalith em forjar uma chama própria.",
+        dropimg: "../../assets/images/esgotochave.webp",
+        dropimg2: "../../assets/images/humanidade.webp",
+        dropimg3: "../../assets/images/ossoregreso.png",
+        dropimg4: "../../assets/images/machetecapra.webp",
+        dropdesc: "Key to Depths",
+        dropdesc2: "Humanity",
+        dropdesc3: "Homeward Bone",
+        dropdesc4: "Demon Great Machete",
+        dropchance: "Garantido (Boss)",
+        dropchance2: "Garantido (Boss)",
+        dropchance3: "Garantido (Boss)",
+        dropchance4: "5%",
+        fraquezas: "Fogo <br> Dano físico",
+    },
+
+    gapingdragon: {
+        nome: "Gaping Dragon (Dragão Boquiaberto)",
+        nome2: "Gaping Dragon",
+        img: "../../assets/images/gaping.jpg",
+        vida: "NG 4,660",
+        vidaNG: "NG+ 8,947",
+        almas: "NG 25k",
+        almasNG: "NG+ 75k",
+        desc: "Enfrentado nas Profundezas (Depths), guardando a entrada para Blighttown, a batalha ocorre após descer pelas escadas até a arena subterrânea.",
+        loc: "Encontrado como chefe opcional na parte inferior da Undead Burg, após a luta contra o Taurus Demon, por uma porta com escada longa. Mais tarde, versões mais fracas dele — os Lesser Capra Demons — aparecem como inimigos comuns nas ruínas dos demônios (Demon Ruins).",
+        titulo1: "Descendente dos Dragões Eternos",
+        titulo2: "Corrupção pela Gula",
+        titulo3: "Isolamento e Solidão",
+        historia1: "Ainda que distante, ele mantém conexão ancestral com os Dragões Eternos, mesmo após sua transformação grotesca.",
+        historia2: "Segundo os criadores, sua fome consumiu sua forma; o surgimento da vida e emoção o corromperam, transformando-o em uma boca ambulante.",
+        historia3: "É possível que tenha se escondido nas profundezas e sua solidão o levou a essa forma desesperada de sobrevivência diante do fim de sua raça.",
+        dropimg: "../../assets/images/chavefavela.webp",
+        dropimg2: "../../assets/images/humanidade.webp",
+        dropimg3: "../../assets/images/ossoregreso.png",
+        dropimg4: "../../assets/images/gapingaxe.webp",
+        dropdesc: "Blighttown Key",
+        dropdesc2: "Humanity",
+        dropdesc3: "Homeward Bone",
+        dropdesc4: "Dragon King Greataxe",
+        dropchance: "Garantido (Boss)",
+        dropchance2: "Garantido (Boss)",
+        dropchance3: "Garantido (Boss)",
+        dropchance4: "5%",
+        fraquezas: "Fogo <br> Dano físico",
+        resistencia: ""
+    },
+
+
+
 
 
 };
