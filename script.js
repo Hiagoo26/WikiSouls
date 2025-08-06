@@ -150,7 +150,7 @@ const dadosChefes = {
         dropchance3: "Garantido",
         dropchance4: "Ao cortar a cauda",
         fraquezas: " Raio <br> Perfuração, especialmente em ataque direcionados à cabeça",
-        resistencia: ""
+        resistencia: "Dano físico <br> Magia"
     },
 
 
