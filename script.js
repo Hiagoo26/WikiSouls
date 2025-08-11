@@ -152,11 +152,66 @@ const dadosChefes = {
         fraquezas: " Raio <br> Perfuração, especialmente em ataque direcionados à cabeça",
         resistencia: "Dano físico <br> Magia"
     },
-
-
-
-
-
+    quelaag: {
+        nome: "Chaos Witch Quelaag ( Bruxa do Caos Quelaag )",
+        nome2: "Chaos Witch Quelaag",
+        img: "../../assets/images/quelaag.jpg",
+        vida: "NG 3,139",
+        vidaNG: "NG+ 6,027",
+        almas: "NG 20k",
+        almasNG: "NG+ 60k",
+        desc: "Enfrentado nas Profundezas (Depths), guardando a entrada para Blighttown, a batalha ocorre após descer pelas escadas até a arena subterrânea.",
+        loc: "Está no Domínio da Quelaag, logo após Blighttown.",
+        titulo1: "Filha da Bruxa de Izalith",
+        titulo2: "Protetora sacrificada",
+        historia1: "Ela, junto com a irmã, falhou ao fugir do fogo caótico que consumiu Izalith, resultando em sua transformação em uma criatura meio mulher, meio aranha.",
+        historia2: "Com o corpo mesclado ao de uma aranha demoníaca, ela e sua irmã tomaram refúgio em Blighttown. Quando sua irmã adoeceu ao absorver a corrupção local, Quelaag passou a proteger e alimentar a irmã, usando humanidade coletada de Undead para aliviar seu sofrimento. Para impedir que intrusos alcançassem o sino, erigiu um casulo e dominou o território.",
+        dropimg: "../../assets/images/almaboss.webp",
+        dropdesc: "Soul of Quelaag",
+        dropchance: "Garantido",
+        fraquezas: " Poise <br> Crítico",
+        resistencia: "Imune a fogo"
+    },
+    ironGolem: {
+        nome: "Iron Golem (Golem de Ferro)",
+        nome2: "Iron Golem",
+        img: "../../assets/images/iron.jpg",
+        vida: "NG 2.880",
+        vidaNG: "NG+ 5.270",
+        almas: "NG 40k",
+        almasNG: "NG+ 120k",
+        desc: "Encontrado no topo da Sen’s Fortress, serve de último teste antes de acessar Anor Londo.",
+        loc: "No alto da Sen’s Fortress, guardando o caminho para Anor Londo.",
+        titulo1: "Guardião Divino",
+        titulo2: "Desafio Final da Fortaleza",
+        historia1: "Construído pelos deuses como um autômato de ferro, animado por um núcleo feito de osso de dragão eterno fundido com almas.",
+        historia2: "Posicionado como último desafio ritualístico após tocar os Sinos da Despertar, impedindo o Undead de chegar ao Lordvessel e prosseguir até Anor Londo.",
+        dropimg: "../../assets/images/almaboss.webp",
+        dropdesc: "Núcleo de um Golem de Ferro",
+        dropchance: "Garantido",
+        fraquezas: "Lightning <br> Strike (Golpes contundentes)",
+        resistencia: "Fogo <br> Magia <br> Veneno",
+      },
+      ornsteinSmough: {
+        nome: "Dragon Slayer Ornstein & Executioner Smough",
+        nome2: "Ornstein & Smough",
+        img: "../../assets/images/oAs.jpg",
+        vida: "NG Ornstein: 1,772 / Smough: 2,960",
+        vidaNG: "NG+ Ornstein: 4,644 / Smough: 7,768",
+        almas: "NG 50k",
+        almasNG: "NG+ 150k",
+        desc: "Encontrados no salão da catedral de Anor Londo, são o desafio final antes de alcançar Gwynevere e prosseguir rumo ao Lordvessel.",
+        loc: "No salão principal da catedral em Anor Londo.",
+        titulo1: "Ornstein – O Caçador de Dragões",
+        titulo2: "Smough – O Carrasco Canibal",
+        historia1: "Capitão dos Quatro Cavaleiros de Gwyn, Ornstein é conhecido por caçar e exterminar dragões. Mestre no uso de ataques elétricos, foi designado para proteger Anor Londo ao lado de Smough.",
+        historia2: "Carrasco oficial do reino, Smough foi rejeitado como cavaleiro devido aos seus hábitos canibais. Tornou-se parceiro de Ornstein para guardar a princesa Gwynevere e impedir intrusos.",
+        dropimg: "../../assets/images/almaboss.webp",
+        dropdesc: "Soul of Ornstein / Soul of Smough",
+        dropchance: "Dependendo de quem for derrotado por último",
+        fraquezas: "Ornstein: Fraco a Fogo / Smough: Fraco a Lightning",
+        resistencia: "Ornstein: Resistente a Lightning / Smough: Resistente a Fogo"
+    },
 };
 
 function abrirModal(id) {
