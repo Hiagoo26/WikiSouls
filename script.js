@@ -4,7 +4,7 @@ const fechar = document.getElementById("fechar");
 
 const dadosChefes = {
     gwyn: {
-        nome: "Gwyn, Lord of Cinder (Gwyn, Lorde das Cinzas)",
+        nome: "Gwyn, Lord of Cinder ( Gwyn, Lorde das Cinzas )",
         nome2: "Gwyn, Lord of Cinder",
         img: "../../assets/images/gwyn.jpg",
         vida: "NG 4,185",
@@ -27,8 +27,9 @@ const dadosChefes = {
         fraquezas: "Parry(Contra-ataque) <br> Mágia <br> Status(Veneno e Toxina)",
         resistencia: "Fogo <br> Eletricidade(Lightning)"
     },
+
     asylumdemon: {
-        nome: "Asylum Demon (Demônio do Asilo)",
+        nome: "Asylum Demon ( Demônio do Asilo )",
         nome2: "Asylum Demon",
         img: "../../assets/images/asylumdemon.jpg",
         vida: "NG 813",
@@ -59,7 +60,7 @@ const dadosChefes = {
     },
     
     bellgargoyles: {
-        nome: "Bell Gargoyles (Gárgolas do Sino)",
+        nome: "Bell Gargoyles ( Gárgolas do Sino )",
         nome2: "Bell Gargoyles",
         img: "../../assets/images/gargolas.jpg",
         vida: "NG 1000 & 480",
@@ -95,7 +96,7 @@ const dadosChefes = {
     },
 
     caprademon: {
-        nome: "Capra Demon (Demônio Cabra)",
+        nome: "Capra Demon ( Demônio Cabra )",
         nome2: "Capra Demon",
         img: "../../assets/images/capra.jpg",
         vida: "NG 1,176",
@@ -122,7 +123,7 @@ const dadosChefes = {
     },
 
     gapingdragon: {
-        nome: "Gaping Dragon (Dragão Boquiaberto)",
+        nome: "Gaping Dragon ( Dragão Boquiaberto )",
         nome2: "Gaping Dragon",
         img: "../../assets/images/gaping.jpg",
         vida: "NG 4,660",
@@ -152,6 +153,7 @@ const dadosChefes = {
         fraquezas: " Raio <br> Perfuração, especialmente em ataque direcionados à cabeça",
         resistencia: "Dano físico <br> Magia"
     },
+
     quelaag: {
         nome: "Chaos Witch Quelaag ( Bruxa do Caos Quelaag )",
         nome2: "Chaos Witch Quelaag",
@@ -172,8 +174,9 @@ const dadosChefes = {
         fraquezas: " Poise <br> Crítico",
         resistencia: "Imune a fogo"
     },
+
     ironGolem: {
-        nome: "Iron Golem (Golem de Ferro)",
+        nome: "Iron Golem ( Golem de Ferro )",
         nome2: "Iron Golem",
         img: "../../assets/images/iron.jpg",
         vida: "NG 2.880",
@@ -194,9 +197,10 @@ const dadosChefes = {
         dropchance2: "Garantido",
         fraquezas: "Lightning <br> Strike (Golpes contundentes)",
         resistencia: "Fogo <br> Magia <br> Veneno",
-      },
-      ornsteinSmough: {
-        nome: "Dragon Slayer Ornstein & Executioner Smough",
+    },
+
+    ornsteinSmough: {
+        nome: "Dragon Slayer Ornstein & Executioner Smough ( Matador de Dragões Ornstein & Executador Smough )",
         nome2: "Ornstein & Smough",
         img: "../../assets/images/oAs.jpg",
         vida: "NG Ornstein: 1,772 / Smough: 2,960",
@@ -218,6 +222,34 @@ const dadosChefes = {
         fraquezas: "Ornstein: Fraco a Fogo <br> Smough: Fraco a Lightning",
         resistencia: "Ornstein: Resistente a Lightning <br> Smough: Resistente a Fogo"
     },
+
+    seath: {
+        nome: "Seath the Scaleless ( Seath o sem escamas )",
+        nome2: "Seath the Scaleless",
+        img: "../../assets/images/seath.webp",
+        vida: "NG 5 525",
+        vidaNG: "NG+ 8 674",
+        almas: "NG 60 000",
+        almasNG: "NG+ 120 000",
+        desc: "Dragão albino encontrado no topo das Duke’s Archives e, depois, na Crystal Cave — guardião de um Lord Soul.",
+        loc: "Nos Archives do Duque e na Crystal Cave.",
+        titulo1: "Traidor dos Dragões Eternos",
+        titulo2: "Obcecado pela Imortalidade",
+        historia1: "Seath traiu os Dragões Eternos ao aliar-se com Gwyn; sua falta de escamas o impelia a buscar imortalidade por meio de magia cristalina e da Primordial Crystal.",
+        historia2: "Ganhou título de Duque, o fragmento da Lord Soul e acesso às Archives, onde se isolou em estudos extremos, criando monstros de cristal e perseguindo a eternidade por experimentos cada vez mais desesperados.",
+        dropimg: "../../assets/images/almagywn.webp",
+        dropimg2: "../../assets/images/moonlight.png",
+        dropimg3: "../../assets/images/humanidade.webp",
+        dropdesc: "Alma de Seath",
+        dropdesc2: "Moonlight Greatsword (cauda)",
+        dropdesc3: "Humanity",
+        dropchance: "Garantido",
+        dropchance2: "Garantido cortando a cauda",
+        dropchance3: "Garantido",
+        fraquezas: "Crítico no estômago <br> Lightning",
+        resistencia: "Altamente resistente a Magia (é o pai da Feitiçaria)"
+          
+    }
 };      
 
 function abrirModal(id) {
