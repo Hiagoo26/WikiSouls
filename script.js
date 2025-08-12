@@ -215,10 +215,10 @@ const dadosChefes = {
         dropdesc2: "Anel do Leão",
         dropchance: "Dependendo de quem for derrotado por último",
         dropchance2: "Ao derrotar o Super Ornstein",
-        fraquezas: "Ornstein: Fraco a Fogo / Smough: Fraco a Lightning",
-        resistencia: "Ornstein: Resistente a Lightning / Smough: Resistente a Fogo"
+        fraquezas: "Ornstein: Fraco a Fogo <br> Smough: Fraco a Lightning",
+        resistencia: "Ornstein: Resistente a Lightning <br> Smough: Resistente a Fogo"
     },
-};
+};      
 
 function abrirModal(id) {
     const boss = dadosChefes[id];
