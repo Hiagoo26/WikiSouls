@@ -4,11 +4,11 @@ const fechar = document.getElementById("fechar");
 
 let dadosChefes = {};
 
-fetch('/bossesds1.json')
+fetch('data/bossesds1.json')
     .then(res => res.json())
     .then(nome => {
         dadosChefes = nome;
-        console.log('Oi, funcionou')
+        console.log('Carregou!')
     })
     .catch( error => {
         console.error("Erro:", error)
