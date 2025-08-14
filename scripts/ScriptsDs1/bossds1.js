@@ -4,7 +4,7 @@ const fechar = document.getElementById("fechar");
 
 let dadosChefes = {};
 
-fetch('data/bossesds1.json')
+fetch('../../data/bossesds1.json')
     .then(res => res.json())
     .then(nome => {
         dadosChefes = nome;
