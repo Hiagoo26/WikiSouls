@@ -114,20 +114,28 @@ function abrirModal(id) {
 
     }
 
-    if(boss.resistencia){
+    if(boss.resistencias && boss.resistencias.length > 0){
         conteudoHtml += `
-            <hr> 
+            <hr>
             <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Resistências</h2>
-            <p>${boss.resistencia}</p>
-        `;
+        `
+        boss.resistencias.forEach(resistencia => {
+            conteudoHtml += `
+                <p>${resistencia.resistencia}</p>
+            `;
+        });
     }
 
-    if(boss.fraquezas){
+    if(boss.fraquezas && boss.fraquezas.length > 0){
         conteudoHtml += `
             <hr> 
             <h2 style="font-family: var(--font1); color: var(--firstcolor); margin-top: 20px;">Fraquezas</h2>
-            <p>${boss.fraquezas}</p> 
         `;
+        boss.fraquezas.forEach(fraqueza => {
+            conteudoHtml += `
+                <p>${fraqueza.fraqueza}</p>
+            `;
+        });
     }
 
     bodymodal.innerHTML = conteudoHtml;

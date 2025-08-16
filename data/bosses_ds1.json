@@ -34,8 +34,25 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Parry(Contra-ataque)  Mágia  Status(Veneno e Toxina)",
-        "resistencia": "Fogo  Eletricidade(Lightning)"
+        "fraquezas": [
+            {
+                "fraqueza": "Parry(Contra-ataque)"
+            },
+            {
+                "fraqueza": "Mágia"
+            },
+            {
+                "fraqueza": "Status(Veneno e Toxina)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Fogo"
+            },
+            {
+                "resistencia": "Eletricidade(Lightning)"
+            }
+        ]
     },
 
     "asylumdemon": {
@@ -84,8 +101,25 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Fogo  Magia  Bleed(Sangramento)",
-        "resistencia": "Dano Físico  Poise alto"
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Mágia"
+            },
+            {
+                "fraqueza": "Bleed(Sangramento)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Dano Físico"
+            },
+            {
+                "resistencia": "Poise alto"
+            }
+        ]
     },
     
     "bellgargoyles": {
@@ -140,8 +174,22 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Fogo  Raio(As de Anor Londo)",
-        "resistencia": "Dano Físico  Mágia"
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Eletricidade(As de Anor Londo)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Dano Físico"
+            },
+            {
+                "resistencia": "Mágia"
+            }
+        ]
     },
 
     "caprademon": {
@@ -182,7 +230,14 @@
                 "chance": "5%"
             }
         ],
-        "fraquezas": "Fogo  Dano físico"
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Dano físico"
+            }
+        ]
     },
 
     "gapingdragon": {
@@ -231,8 +286,22 @@
                 "chance": "Ao cortar a cauda"
             }
         ],
-        "fraquezas": " Raio  Perfuração, especialmente em ataque direcionados à cabeça",
-        "resistencia": "Dano físico  Magia"
+        "fraquezas": [
+            {
+                "fraqueza": "Eletricidade(Lighting)"
+            },
+            {
+                "fraqueza": "Perfuração(Especialmente em ataques direcionados à cabeça)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Dano Físico"
+            },
+            {
+                "resistencia": "Mágia"
+            }
+        ]
     },
 
     "quelaag": {
@@ -262,8 +331,19 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": " Poise  Crítico",
-        "resistencia": "Imune a fogo"
+        "fraquezas": [
+            {
+                "fraqueza": "Poise"
+            },
+            {
+                "fraqueza": "Crítico"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Imune a fogo"
+            }
+        ]
     },
 
     "ironGolem": {
@@ -298,8 +378,25 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Lightning  Strike (Golpes contundentes)",
-        "resistencia": "Fogo  Magia  Veneno"
+        "fraquezas": [
+            {
+                "fraqueza": "Eletricidade(Lighting)"
+            },
+            {
+                "fraqueza": "Strike (Golpes contundentes)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Fogo"
+            },
+            {
+                "resistencia": "Mágia"
+            },
+            {
+                "resistencia": "Veneno"
+            }
+        ]
     },
 
     "ornsteinSmough": {
@@ -334,8 +431,22 @@
                 "chance": "Ao derrotar o Super Ornstein"
             }
         ],
-        "fraquezas": "Ornstein: Fraco a Fogo  Smough: Fraco a Lightning",
-        "resistencia": "Ornstein: Resistente a Lightning  Smough: Resistente a Fogo"
+        "fraquezas": [
+            {
+                "fraqueza": "Ornstein: Fraco a Fogo"
+            },
+            {
+                "fraqueza": "Smough: Fraco a Eletricidade(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Ornstein: Resistente a Eletricidade(Lightning)"
+            },
+            {
+                "resistencia": "Smough: Resistente a Fogo"
+            }
+        ]
     },
 
     "seath": {
@@ -375,9 +486,19 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Crítico no estômago  Lightning",
-        "resistencia": "Altamente resistente a Magia (é o pai da Feitiçaria)"
-          
+        "fraquezas": [
+            {
+                "fraqueza": "Crítico(No estômago)"
+            },
+            {
+                "fraqueza": "Eletricidade(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Altamente resistente a Magia (é o pai da Feitiçaria)"
+            }
+        ]
     },
 
     "fourKings": {
@@ -416,7 +537,30 @@
                 "chance": "Garantido"
             }
         ],
-        "fraquezas": "Lightning  Fire  Magic",
-        "resistencia": "Imune a Poison  Toxin  Bleed  Curse"
+        "fraquezas": [
+            {
+                "fraqueza": "Eletricidade(Lightning)"
+            },
+              {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Mágia"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Imune a Veneno"
+            },
+            {
+                "resistencia": "Imune a Tóxina"
+            },
+            {
+                "resistencia": "Imune a Sangramento"
+            },
+            {
+                "resistencia": "Imune a Maldição"
+            }
+        ]
     }
 } 
