@@ -9,6 +9,11 @@ fetch('../../data/bosses_ds1.json')
     .then(nome => {
         dadosChefes = nome;
         console.log('Carregou!')
+
+        const botoeschefes = document.querySelectorAll(".chefes");
+        botoeschefes.forEach(botao => {
+            botao.disabled = false;
+        });
     })
     .catch( error => {
         console.error("Erro:", error)
@@ -16,6 +21,11 @@ fetch('../../data/bosses_ds1.json')
     
 function abrirModal(id) {
     const boss = dadosChefes[id];
+
+    if(!boss) {
+        alert("Chefe não encontrado!")
+        return;
+    }
     let conteudoHtml = `
         <h2 style="font-family: var(--font1); text-align: center;">${boss.nome}</h2>
         <hr>
