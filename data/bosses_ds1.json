@@ -453,10 +453,10 @@
         "nome": "Seath the Scaleless ( Seath o sem escamas )",
         "nome2": "Seath the Scaleless",
         "img": "../../assets/images/seath.webp",
-        "vida": "NG 5 525",
-        "vidaNG": "NG+ 8 674",
-        "almas": "NG 60 000",
-        "almasNG": "NG+ 120 000",
+        "vida": "NG 5,525",
+        "vidaNG": "NG+ 8,674",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 120k",
         "desc": "Dragão albino encontrado no topo das Duke’s Archives e, depois, na Crystal Cave — guardião de um Lord Soul.",
         "loc": "Nos Archives do Duque e na Crystal Cave.",
         "historias": [
@@ -505,10 +505,10 @@
         "nome": "Four Kings ( Quatro Reis )",
         "nome2": "Four Kings",
         "img": "../../assets/images/fourk.webp",
-        "vida": "NG 9 504",
-        "vidaNG": "NG+ 16 060",
-        "almas": "NG 60 000",
-        "almasNG": "NG+ 180 000",
+        "vida": "NG 9,504",
+        "vidaNG": "NG+ 16,061",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 180k",
         "desc": "Esses antigos governantes de New Londo foram corrompidos pelo Abismo e agora surgem um a um na escuridão do Abismo.",
         "loc": "Abyss, abaixo das ruínas de New Londo — requer a Covenant of Artorias para entrar.",
         "historias": [
@@ -560,6 +560,60 @@
             },
             {
                 "resistencia": "Imune a Maldição"
+            }
+        ]
+    },
+    
+    "nito": {
+        "nome": "Gravelord Nito ( Nito, o Senhor dos Mortos )",
+        "nome2": "Gravelord Nito",
+        "img": "../../assets/images/nito.webp",
+        "vida": "NG 4,362",
+        "vidaNG": "NG+ 7,076",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 120k",
+        "desc": "Primeiro dos mortos e um dos Lordes originais. Enfrentado no Túmulo dos Gigantes, cercado por esqueletos que ele próprio convoca para batalha.",
+        "loc": "Tomb of the Giants, no fundo da catacumba — é necessário o Lordvessel para acessá-lo.",
+        "historias": [
+            {
+                "titulo": "Primeiro dos Mortos",
+                "historia": "Nito recebeu uma parte da Primeira Chama, a Lord Soul da morte. Espalhou doenças e decomposição contra os Dragões Eternos durante a guerra liderada por Gwyn."
+            },
+            {
+                "titulo": "Senhor dos Esqueletos",
+                "historia": "Reinou sobre os mortos no Tomb of the Giants, controlando um exército de esqueletos que revive sem cessar sob seu domínio."
+            },
+            {
+                "titulo": "Culto e Aliança",
+                "historia": "É reverenciado pelos seguidores do Pacto Gravelord Servant, que espalham pragas e maldições em nome do Senhor dos Mortos."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almagywn.webp",
+                "desc": "Alma de Nito",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Muito resistente a Toxina"
+            },
+            {
+                "resistencia": "Muito resistente a Veneno"
+            },
+            {
+                "resistencia": "Imune a Bleed"
             }
         ]
     }
