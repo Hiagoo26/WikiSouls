@@ -39,7 +39,7 @@ Este projeto está me ajudando a praticar conceitos como:
    `git clone https://github.com/Hiagoo26/wiki-souls.git`
 
 2. Navegue até a pasta:  
-   `cd wiki-souls`
+   `cd WikiSouls`
 
 3. Abra o arquivo `index.html` em seu navegador (clique duas vezes ou use Live Server no VSCode).
 
