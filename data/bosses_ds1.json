@@ -670,5 +670,62 @@
                 "resistencia": "Imune a Sangramento"
             }
         ]
+    },
+
+    "strayDemon": {
+        "nome": "Stray Demon ( Demônio Perdido )",
+        "nome2": "Stray Demon",
+        "img": "../../assets/images/straydemon.jpg",
+        "vida": "NG 5,250",
+        "vidaNG": "NG+ 8,242",
+        "almas": "NG 20k",
+        "almasNG": "NG+ 40k",
+        "desc": "Versão mais poderosa do Asylum Demon, encontrada em uma área secreta do Undead Asylum quando o jogador retorna ao local.",
+        "loc": "Undead Asylum (retorno), abaixo da cela inicial — é acessado ao usar o Elevador de Firelink e pular para o ninho do corvo.",
+        "historias": [
+            {
+                "titulo": "Parente do Asylum Demon",
+                "historia": "Assim como o Asylum Demon, pertence à linhagem dos demônios criados pelo Caos, mas é mais poderoso e agressivo."
+            },
+            {
+                "titulo": "Guardião do Asilo",
+                "historia": "Foi deixado para proteger os segredos do Undead Asylum e eliminar qualquer Undead que retornasse ao local."
+            },
+            {
+                "titulo": "Desafio Opcional",
+                "historia": "Não é necessário derrotá-lo para progredir na história, mas concede recompensas valiosas e fecha a história do Asilo."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/placatitanita.png",
+                "desc": "Placa de Titanita",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/ossoregreso.png",
+                "desc": "Osso do Regresso",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Magia"
+            },
+            {
+                "fraqueza": "Eletricidade(Lighting)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Fogo"
+            }
+        ]
     }
+
 } 
