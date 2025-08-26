@@ -568,7 +568,7 @@
         "nome": "Gravelord Nito ( Nito, o Senhor dos Mortos )",
         "nome2": "Gravelord Nito",
         "img": "../../assets/images/nito.webp",
-        "vida": "NG 4,362",
+        "vida": "NG 4,317",
         "vidaNG": "NG+ 7,076",
         "almas": "NG 60k",
         "almasNG": "NG+ 120k",
@@ -614,6 +614,60 @@
             },
             {
                 "resistencia": "Imune a Bleed"
+            }
+        ]
+    },
+
+    "bed": {
+        "nome": "Bed of Chaos ( Leito do Caos )",
+        "nome2": "Bed of Chaos",
+        "img": "../../assets/images/thebed.jpg",
+        "vida": "NG 1",
+        "vidaNG": "NG+ 3",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 120k",
+        "desc": "Criadora de todos os Demônios e uma das fontes do caos em Lordran. Enfrentada em Lost Izalith em uma batalha marcada por armadilhas e destruição progressiva da arena.",
+        "loc": "Lost Izalith, no coração do caos — é necessário avançar pela Demon Ruins para acessá-la.",
+        "historias": [
+            {
+                "titulo": "A Criação do Caos",
+                "historia": "A antiga Bruxa de Izalith tentou replicar a Primeira Chama para evitar seu enfraquecimento, mas falhou e criou a Chama do Caos, corrompendo tudo ao seu redor."
+            },
+            {
+                "titulo": "Nascimento dos Demônios",
+                "historia": "Dessa falha nasceu a Bed of Chaos, um ser monstruoso que deu origem a todos os demônios de Lordran, incluindo Ceaseless Discharge e as Filhas do Caos."
+            },
+            {
+                "titulo": "Guardião do Lord Soul",
+                "historia": "É uma das portadoras da Lord Soul original de Izalith e deve ser derrotada para acessar a Fornalha da Primeira Chama."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almagywn.webp",
+                "desc": "Lord Soul (de Bed of Chaos)",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Dano direto ao núcleo (não sofre dano normal)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Altamente resistente a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno"
+            },
+            {
+                "resistencia": "Imune a Sangramento"
             }
         ]
     }
