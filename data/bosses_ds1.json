@@ -50,7 +50,7 @@
                 "resistencia": "Fogo"
             },
             {
-                "resistencia": "Eletricidade(Lightning)"
+                "resistencia": "Raio(Lightning)"
             }
         ]
     },
@@ -179,7 +179,7 @@
                 "fraqueza": "Fogo"
             },
             {
-                "fraqueza": "Eletricidade(As de Anor Londo)"
+                "fraqueza": "Raio(As de Anor Londo)"
             }
         ],
         "resistencias": [
@@ -288,7 +288,7 @@
         ],
         "fraquezas": [
             {
-                "fraqueza": "Eletricidade(Lighting)"
+                "fraqueza": "Raio(Lightning)"
             },
             {
                 "fraqueza": "Perfuração(Especialmente em ataques direcionados à cabeça)"
@@ -380,7 +380,7 @@
         ],
         "fraquezas": [
             {
-                "fraqueza": "Eletricidade(Lighting)"
+                "fraqueza": "Raio(Lightning)"
             },
             {
                 "fraqueza": "Strike (Golpes contundentes)"
@@ -436,12 +436,12 @@
                 "fraqueza": "Ornstein: Fraco a Fogo"
             },
             {
-                "fraqueza": "Smough: Fraco a Eletricidade(Lightning)"
+                "fraqueza": "Smough: Fraco a Raio(Lightning)"
             }
         ],
         "resistencias": [
             {
-                "resistencia": "Ornstein: Resistente a Eletricidade(Lightning)"
+                "resistencia": "Ornstein: Resistente a Raio(Lightning)"
             },
             {
                 "resistencia": "Smough: Resistente a Fogo"
@@ -491,7 +491,7 @@
                 "fraqueza": "Crítico(No estômago)"
             },
             {
-                "fraqueza": "Eletricidade(Lightning)"
+                "fraqueza": "Raio(Lightning)"
             }
         ],
         "resistencias": [
@@ -539,7 +539,7 @@
         ],
         "fraquezas": [
             {
-                "fraqueza": "Eletricidade(Lightning)"
+                "fraqueza": "Raio(Lightning)"
             },
               {
                 "fraqueza": "Fogo"
@@ -718,7 +718,7 @@
                 "fraqueza": "Magia"
             },
             {
-                "fraqueza": "Eletricidade(Lighting)"
+                "fraqueza": "Raio(Lightning)"
             }
         ],
         "resistencias": [
@@ -776,7 +776,7 @@
         ],
         "fraquezas": [
             {
-                "fraqueza": "Eletricidade(Lightning)"
+                "fraqueza": "Raio(Lightning)"
             }
         ],
         "resistencias": [
@@ -785,6 +785,70 @@
             },
             {
                 "resistencia": "Imune a Bleed, Poison e Toxina"
+            }
+        ]
+    },
+
+    "sif": {
+        "nome": "Great Grey Wolf Sif ( Grande Lobo Cinzento Sif )",
+        "nome2": "Great Grey Wolf Sif",
+        "img": "../../assets/images/sif.jpg",
+        "vida": "NG 3,432",
+        "vidaNG": "NG+ 5,800",
+        "almas": "NG 40k",
+        "almasNG": "NG+ 120k",
+        "desc": "Um gigantesco lobo que empunha a espada de seu mestre Artorias para proteger o túmulo do cavaleiro caído.",
+        "loc": "Darkroot Garden, no final do caminho protegido por criaturas da floresta e a chave da Crest of Artorias.",
+        "historias": [
+            {
+                "titulo": "Companheiro de Artorias",
+                "historia": "Sif era o fiel companheiro do lendário cavaleiro Artorias, acompanhando-o em sua luta contra o Abyss."
+            },
+            {
+                "titulo": "Guardião do Túmulo",
+                "historia": "Após a queda de Artorias, Sif permaneceu como protetor de seu túmulo e da Covenant of Artorias, evitando que aventureiros profanem seu legado."
+            },
+            {
+                "titulo": "Laços e Tragédia",
+                "historia": "Caso o jogador salve Sif no passado (DLC Artorias of the Abyss), o lobo reconhece o protagonista antes da luta, tornando o confronto ainda mais trágico."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaboss.webp",
+                "desc": "Alma de Sif",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/pactoartorias.png",
+                "desc": "Anel do Pacto de Artorias",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/ossoregreso.png",
+                "desc": "Osso do Regresso",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Bleed"
+            },
+            {
+                "fraqueza": "Raio(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Magia"
+            },
+            {
+                "resistencia": "Imune a Poison e Toxina"
             }
         ]
     }
