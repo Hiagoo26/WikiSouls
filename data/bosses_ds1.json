@@ -645,7 +645,7 @@
         "drops": [
             {
                 "img": "../../assets/images/almagywn.webp",
-                "desc": "Lord Soul (de Bed of Chaos)",
+                "desc": "Alma do Leito do Caos",
                 "chance": "Garantido"
             },
             {
@@ -726,6 +726,68 @@
                 "resistencia": "Fogo"
             }
         ]
+    },
+
+    "Butterfly": {
+        "nome": "Moonlight Butterfly ( Borboleta da Luz Lunar)",
+        "nome2": "Moonlight Butterfly",
+        "img": "../../assets/images/moonlight.jpg",
+        "vida": "NG 1,255",
+        "vidaNG": "NG+ 1,970",
+        "almas": "NG 10k",
+        "almasNG": "NG+ 40k",
+        "desc": "Uma criatura mágica que sobrevoa a ponte no topo da Darkroot Garden, atacando com feitiços de longo alcance.",
+        "loc": "Darkroot Garden, no topo de uma torre além da área infestada por árvores-vivas.",
+        "historias": [
+            {
+                "titulo": "Criação de Seath",
+                "historia": "Criada pelo dragão albino Seath the Scaleless, a Moonlight Butterfly é um de seus experimentos com magia cristalina e vida artificial."
+            },
+            {
+                "titulo": "Guardião da Floresta",
+                "historia": "Designada para proteger os portões que levam ao Caminho de Sif e ao Covenant of Artorias."
+            },
+            {
+                "titulo": "Conexão com a Magia",
+                "historia": "Seu design mágico reflete o poder das Moonlight armas de Seath, sendo um elo temático com a Moonlight Greatsword."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaboss.webp",
+                "desc": "Alma da Borboleta da Luz Lunar",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/chunkbluet.png",
+                "desc": "Pedaço de Titanita Azul",
+                "chance": "10% (0.3% a chance de drop 2x)"
+            },
+            {
+                "img": "../../assets/images/placatitanitaBlue.png",
+                "desc": "Placa de Titanita Azul",
+                "chance": "0.2%"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Eletricidade(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Magia"
+            },
+            {
+                "resistencia": "Imune a Bleed, Poison e Toxina"
+            }
+        ]
     }
+
 
 } 
