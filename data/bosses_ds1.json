@@ -109,7 +109,7 @@
                 "fraqueza": "Mágia"
             },
             {
-                "fraqueza": "Bleed(Sangramento)"
+                "fraqueza": "Sangramento(Sangramento)"
             }
         ],
         "resistencias": [
@@ -613,7 +613,7 @@
                 "resistencia": "Muito resistente a Veneno"
             },
             {
-                "resistencia": "Imune a Bleed"
+                "resistencia": "Imune a Sangramento"
             }
         ]
     },
@@ -784,7 +784,13 @@
                 "resistencia": "Alta resistência a Magia"
             },
             {
-                "resistencia": "Imune a Bleed, Poison e Toxina"
+                "resistencia": "Imune a Sangramento"
+            },
+            {
+                "resistencia": "Imune a Veneno"
+            },
+            {
+                "resistencia": "Imune a Toxina"
             }
         ]
     },
@@ -837,7 +843,7 @@
         ],
         "fraquezas": [
             {
-                "fraqueza": "Bleed"
+                "fraqueza": "Sangramento"
             },
             {
                 "fraqueza": "Raio(Lightning)"
@@ -845,13 +851,81 @@
         ],
         "resistencias": [
             {
-                "resistencia": "Alta resistência a Magia"
+                "resistencia": "Veneno"
             },
             {
-                "resistencia": "Imune a Poison e Toxina"
+                "resistencia": "Toxina"
+            }
+        ]
+    },
+
+    "pinwheel": {
+        "nome": "Pinwheel ( Catavento )",
+        "nome2": "Pinwheel",
+        "img": "../../assets/images/pinwheel.jpg",
+        "vida": "NG 1,326",
+        "vidaNG": "NG+ 2,691",
+        "almas": "NG 15k",
+        "almasNG": "NG+ 25k",
+        "desc": "Um ser estranho e grotesco que usa máscaras para multiplicar seu poder, encontrado no final das Catacumbas.",
+        "loc": "The Catacombs, guardando o caminho para o Tomb of the Giants.",
+        "historias": [
+            {
+                "titulo": "Origem Desconhecida",
+                "historia": "Pouco se sabe sobre sua verdadeira identidade. Acredita-se que seja uma fusão de um necromante com três corpos, unidos por rituais macabros."
+            },
+            {
+                "titulo": "Máscaras Poderosas",
+                "historia": "Carrega três máscaras únicas: do Pai, da Mãe e da Criança. Cada uma carrega um aspecto de poder que ele utiliza em combate."
+            },
+            {
+                "titulo": "Guardião das Catacumbas",
+                "historia": "Serve como um teste final antes do jogador enfrentar as profundezas do Túmulo dos Gigantes e, eventualmente, Gravelord Nito."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/rito.webp",
+                "desc": "Rito de Acendimento",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/paim.webp",
+                "desc": "Mascára do Pai",
+                "chance": "1/3 (Aleatório)"
+            },
+            {
+                "img": "../../assets/images/maem.webp",
+                "desc": "Mascára da Mãe",
+                "chance": "1/3 (Aleatório)"
+            },
+            {
+                "img": "../../assets/images/filhom.webp",
+                "desc": "Mascára do Filho",
+                "chance": "1/3 (Aleatório)"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Raio(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Moderada resistência a Magia"
+            },
+            {
+                "resistencia": "Veneno"
+            },
+            {
+                "resistencia": "Toxina"
             }
         ]
     }
+
 
 
 } 
