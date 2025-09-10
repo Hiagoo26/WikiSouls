@@ -924,6 +924,57 @@
                 "resistencia": "Toxina"
             }
         ]
+    },
+    "gywndolin": {
+        "nome": "Dark Sun Gwyndolin ( Sol Negro Gwyndolin )",
+        "nome2": "Dark Sun Gwyndolin",
+        "img": "../../assets/images/gywndolin.jpg",
+        "vida": "NG 2,000",
+        "vidaNG": "NG+ 6,000",
+        "almas": "NG 40k",
+        "almasNG": "NG+ 120k",
+        "desc": "O mais novo filho de Gwyn, guardião de Anor Londo e líder do Blades of the Darkmoon. Mestre em ilusões e feitiçaria lunar.",
+        "loc": "No fim da passagem secreta sob a estátua de Gwyn em Anor Londo.",
+        "historias": [
+            {
+                "titulo": "O Filho Esquecido",
+                "historia": "Nascido com afinidade com a lua e a magia, Gwyndolin foi criado como mulher por Gwyn devido à sua ligação com o princípio lunar."
+            },
+            {
+                "titulo": "Mestre das Ilusões",
+                "historia": "Usou sua magia para manter ilusões em Anor Londo, incluindo a imagem de Gwynevere, preservando a glória da cidade mesmo após o êxodo dos deuses."
+            },
+            {
+                "titulo": "Guardião e Juiz",
+                "historia": "Como líder do pacto Blades of the Darkmoon, enviava guerreiros para punir aqueles que pecavam contra a Ordem dos Deuses."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaboss.webp",
+                "desc": "Alma de Gwyndolin",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Magia"
+            },
+            {
+                "fraqueza": "Raio(Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno"
+            },
+            {
+                "resistencia": "Imune a Toxina"
+            }
+        ]
     }
 
 
