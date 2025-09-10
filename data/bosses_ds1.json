@@ -975,6 +975,67 @@
                 "resistencia": "Imune a Toxina"
             }
         ]
+    },
+    "priscilla": {
+        "nome": "Crossbreed Priscilla ( Priscilla, a Mestiça )",
+        "nome2": "Crossbreed Priscilla",
+        "img": "../../assets/images/pris.webp",
+        "vida": "NG 2,300",
+        "vidaNG": "NG+ 4,117",
+        "almas": "NG 30k",
+        "almasNG": "NG+ 60k",
+        "desc": "Uma mestiça de dragão e deusa, exilada no Mundo Pintado de Ariamis. Embora pacífica, ela possui o temido poder do Lifehunt.",
+        "loc": "No fim do Mundo Pintado de Ariamis, acessado através de uma pintura em Anor Londo.",
+        "historias": [
+            {
+                "titulo": "A Exilada do Mundo Pintado",
+                "historia": "Por ser uma mestiça, uma abominação aos olhos dos deuses, Priscilla foi banida para o frio Mundo Pintado, que serve tanto como seu lar quanto como sua prisão."
+            },
+            {
+                "titulo": "O Poder do Lifehunt",
+                "historia": "Ela empunha o poder do 'Lifehunt', uma habilidade tão perigosa que era temida até mesmo pelos deuses. Por isso, a foice que ela carrega é considerada uma das armas mais perigosas."
+            },
+            {
+                "titulo": "Guardiã Pacífica",
+                "historia": "Diferente de outros chefes, Priscilla não é hostil. Ela pede ao jogador que deixe seu mundo em paz, afirmando que os habitantes de lá são pacíficos. Ela só ataca se for agredida primeiro."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaboss.webp",
+                "desc": "Alma de Priscilla",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/adagapri.png",
+                "desc": "Adaga de Priscilla",
+                "chance": "Cortando sua cauda"
+            },
+            {
+                "img":"../../assets/images/humanidadeg.webp",
+                "desc": "Humanidades Gêmeas",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Ataques pesados (quebram sua invisibilidade)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Magia"
+            },
+            {
+                "resistencia": "Imune a Sangramento"
+            },
+            {
+                "resistencia": "Imune a Veneno e Toxina"
+            }
+        ]
     }
 
 
