@@ -925,6 +925,7 @@
             }
         ]
     },
+
     "gywndolin": {
         "nome": "Dark Sun Gwyndolin ( Sol Negro Gwyndolin )",
         "nome2": "Dark Sun Gwyndolin",
@@ -976,6 +977,7 @@
             }
         ]
     },
+
     "priscilla": {
         "nome": "Crossbreed Priscilla ( Priscilla, a Mestiça )",
         "nome2": "Crossbreed Priscilla",
@@ -1036,6 +1038,119 @@
                 "resistencia": "Imune a Veneno e Toxina"
             }
         ]
+    },
+    "demonFire": {
+        "nome": "Demon Firesage ( Demônio Sábio do Fogo )",
+        "nome2": "Demon Firesage",
+        "img": "../../assets/images/demonfire.webp",
+        "vida": "NG 5,448",
+        "vidaNG": "NG+ 8,716",
+        "almas": "NG 20k",
+        "almasNG": "NG+ 40k",
+        "desc": "Um dos primeiros demônios, nascido da Cama do Caos. É uma versão mais antiga e poderosa do Asylum Demon, capaz de conjurar magias de fogo devastadoras com seu catalisador.",
+        "loc": "Nas Ruínas Demoníacas (Demon Ruins), guardando o caminho para o Centipede Demon.",
+        "historias": [
+            {
+                "titulo": "O Primeiro Demônio",
+                "historia": "Acredita-se que o Firesage seja o demônio original do qual todos os outros Asylum e Stray Demons se originaram. Ele é uma testemunha viva do nascimento da Chama do Caos."
+            },
+            {
+                "titulo": "Feitiçaria Perdida",
+                "historia": "Ele empunha um catalisador demoníaco, uma relíquia de uma era em que os demônios praticavam a feitiçaria de fogo, uma arte que se perdeu com o tempo."
+            },
+            {
+                "titulo": "Guardião das Ruínas",
+                "historia": "Posicionado nas profundezas das ruínas, ele atua como um guardião formidável, impedindo que os indignos cheguem à sua mestra, a Bruxa de Izalith, e à Cama do Caos."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/catalisadordemonf.webp",
+                "desc": "Demon's Catalyst",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Magia"
+            },
+            {
+                "fraqueza": "Sangramento (Bleed)"
+            },
+            {
+                "fraqueza": "Atacar por trás"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Resistência extremamente alta a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno e Toxina"
+            }
+        ]
+    },
+
+    "centipede": {
+        "nome": "Centipede Demon ( Demônio Centopeia )",
+        "nome2": "Centipede Demon",
+        "img": "../../assets/images/centipede.jpg",
+        "vida": "NG 3,432",
+        "vidaNG": "NG+ 5,941",
+        "almas": "NG 40k",
+        "almasNG": "NG+ 80k",
+        "desc": "Um demônio caótico nascido do anel de Ceaseless Discharge que caiu na lava. Ele ataca com seus membros longos e pode cuspir fogo, tornando a batalha em seu campo de lava um grande desafio.",
+        "loc": "Em uma grande caverna de lava nas Ruínas Demoníacas, após a arena do Demon Firesage.",
+        "historias": [
+            {
+                "titulo": "A Origem do Anel",
+                "historia": "Este demônio nasceu quando o anel mágico de Ceaseless Discharge, um presente de suas irmãs, caiu na lava. O anel se tornou o núcleo da criatura, seu olho brilhante."
+            },
+            {
+                "titulo": "Guardião de Izalith",
+                "historia": "Ele serve como um guardião natural para Lost Izalith, já que sua arena de lava é intransitável para a maioria dos seres. Apenas derrotando-o é possível obter o anel que permite andar sobre a lava."
+            },
+            {
+                "titulo": "Corpo Caótico",
+                "historia": "Sua forma, uma massa de centopeias e rocha derretida, é um reflexo da natureza caótica de sua criação, um produto direto da maldição que afligiu a família de Izalith."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/anellaranja.png",
+                "desc": "Anel Laranja Carbonizado",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/ossoregreso.png",
+                "desc": "Osso do Regresso",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Cortar seus membros e cauda"
+            },
+            {
+                "fraqueza": "Magia"
+            },
+            {
+                "fraqueza": "Raio (Lightning)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Resistência extremamente alta a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno e Toxina"
+            }
+    ]
     }
 
 
