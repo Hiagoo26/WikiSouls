@@ -1150,7 +1150,119 @@
             {
                 "resistencia": "Imune a Veneno e Toxina"
             }
-    ]
+        ]
+    },
+
+    "ceasless": {
+        "nome": "Ceaseless Discharge ( Descarga Incessante )",
+        "nome2": "Ceaseless Discharge",
+        "img": "../../assets/images/ceas.jpg",
+        "vida": "NG 4,200",
+        "vidaNG": "NG+ 6,720",
+        "almas": "NG 20k",
+        "almasNG": "NG+ 40k",
+        "desc": "O único filho homem da Bruxa de Izalith e irmão mais novo das Filhas do Caos. Deformado pela Chama do Caos, ele agora é uma criatura gigante de lava que guarda o corpo de sua irmã.",
+        "loc": "Nas Ruínas Demoníacas, em um penhasco de lava logo após a arena da Quelaag.",
+        "historias": [
+            {
+                "titulo": "O Filho Amaldiçoado",
+                "historia": "Ceaseless Discharge nasceu com feridas abertas que secretam lava constantemente, uma condição dolorosa. Suas irmãs lhe deram um anel mágico (o Orange Charred Ring) para aliviar seu sofrimento."
+            },
+            {
+                "titulo": "O Guardião da Tumba",
+                "historia": "Ele permanece em vigília eterna sobre um cadáver que se acredita ser de uma de suas irmãs. Ele só se torna hostil quando o jogador profana essa tumba ao pegar as roupas do corpo."
+            },
+            {
+                "titulo": "A Criação de um Demônio",
+                "historia": "Em sua agonia ao ser transformado pela Chama do Caos, ele deixou seu anel cair. Desse anel caído na lava, nasceu o Demônio Centopeia, complicando ainda mais a tragédia de sua família."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img":"../../assets/images/ossoregreso.png",
+                "desc": "Osso do Regresso",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Atraí-lo para o penhasco para um abate fácil"
+            },
+            {
+                "fraqueza": "Magia"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Resistência extremamente alta a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno e Toxina"
+            }
+        ]
+    },
+    "tauros": {
+         "nome": "Taurus Demon ( Demônio Touro )",
+        "nome2": "Taurus Demon",
+        "img": "../../assets/images/taurus.jpg",
+        "vida": "NG 1,215",
+        "vidaNG": "NG+ 3,162",
+        "almas": "NG 3k",
+        "almasNG": "NG+ 15k",
+        "desc": "Um demônio massivo com aparência de minotauro que empunha um machado gigante. Atua como um dos primeiros grandes desafios para o Undead, guardando a ponte em Undead Burg.",
+        "loc": "Na ponte da muralha em Undead Burg, logo após a escada da torre onde se encontra o primeiro Black Knight.",
+        "historias": [
+            {
+                "titulo": "Guardião da Passagem",
+                "historia": "Posicionado como um guardião, o Taurus Demon serve como um teste de força para qualquer um que tente prosseguir através de Undead Burg em direção à paróquia."
+            },
+            {
+                "titulo": "Demônio Menor",
+                "historia": "Diferente dos demônios únicos de Izalith, o Taurus Demon é uma espécie de demônio menor, criado em massa. Isso é provado mais tarde no jogo, quando vários deles são encontrados como inimigos normais nas Ruínas Demoníacas."
+            },
+            {
+                "titulo": "Estratégia do Terreno",
+                "historia": "Sua arena de batalha é estrategicamente posicionada para ensinar ao jogador a importância de usar o ambiente a seu favor, incentivando o uso do famoso 'ataque em queda' (plunging attack) da torre."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/ossoregreso.png",
+                "desc": "Osso do Regresso",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/machadotouro.png",
+                "desc": "Machado Grande do Demônio",
+                "chance": "Chance Rara"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Ataque em Queda (Plunging Attack)"
+            },
+            {
+                "fraqueza": "Raio (Lightning)"
+            },
+            {
+                "fraqueza": "Fogo"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Veneno e Toxina"
+            }
+        ]
     }
 
 
