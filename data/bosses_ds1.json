@@ -1273,7 +1273,7 @@
         "almas": "NG 30k",
         "almasNG": "NG+ 60k",
         "desc": "Uma criatura quimérica, semelhante a uma manticora, com corpo de leão, asas e uma cauda de escorpião venenosa. Ele guarda ferozmente a entrada para o Santuário de Oolacile.",
-        "loc": "Jardim do Santuário (Sanctuary Garden), a primeira área do conteúdo 'Artorias of the Abyss' (DLC).",
+        "loc": "Jardim do Santuário, a primeira área do conteúdo 'Artorias of the Abyss' (DLC).",
         "historias": [
             {
                 "titulo": "Guardião de Oolacile",
@@ -1320,6 +1320,64 @@
             {
                 "resistencia": "Resistência a Raio (Lightning)"
             }
+        ]
+    },
+    "artorias": {
+        "nome": "Knight Artorias, the Abysswalker ( Cavaleiro Artorias, o Andarilho do Abismo )",
+        "nome2": "Knight Artorias",
+        "img": "../../assets/images/artorias.jpg",
+        "vida": "NG 3,750",
+        "vidaNG": "NG+ 5,887",
+        "almas": "NG 50k",
+        "almasNG": "NG+ 100k",
+        "desc": "Um dos Quatro Cavaleiros de Gwyn, um guerreiro lendário com uma vontade de aço inabalável. O jogador o encontra corrompido pelas trevas, com seu braço esquerdo quebrado, lutando como uma sombra frenética de seu antigo eu.",
+        "loc": "Na arena do Coliseu de Oolacile, no fim da Floresta Real.",
+        "historias": [
+            {
+                "titulo": "A Lenda do Andarilho do Abismo",
+                "historia": "Artorias foi um cavaleiro lendário que fez um pacto com as criaturas do Abismo para poder atravessá-lo, uma proeza que nenhum outro conseguiu. Armado com seu grande escudo e espada, ele partiu para Oolacile para conter a expansão das trevas e salvar a Princesa Dusk."
+            },
+            {
+                "titulo": "A Verdade Trágica",
+                "historia": "A lenda contada no jogo base é uma mentira. Artorias foi derrotado pelo Abismo. Em seu último ato de nobreza, ele usou seu escudo mágico para criar uma barreira e proteger seu leal companheiro, o lobo Sif, sacrificando-se para a corrupção. O verdadeiro herói que derrotou Manus foi o jogador, que viajou ao passado, mas a honra de Artorias foi preservada na história."
+            },
+            {
+                "titulo": "Um Duelo de Misericórdia",
+                "historia": "A batalha contra Artorias não é uma luta contra um vilão, mas um ato de misericórdia. O jogador enfrenta o que restou de um nobre herói, consumido e enlouquecido pelo Abismo, lutando desesperadamente com seu braço bom. Derrotá-lo é libertar sua alma atormentada."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaartorias.png",
+                "desc": "Alma de Artorias (Soul of Artorias)",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Interromper seu 'buff' do Abismo com ataques na cabeça"
+            },
+            {
+                "fraqueza": "Ataques físicos durante suas aberturas"
+            },
+            {
+                "fraqueza": "Magia (com menos eficácia que dano físico)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Fogo"
+            },
+            {
+                "resistencia": "Alta resistência a Raio (Lightning)"
+            },
+            {
+                "resistencia": "Imune a Veneno"
+            },
+            {
+                "resistencia": "Imune a Toxina"
+            }
+            
         ]
     }
 
