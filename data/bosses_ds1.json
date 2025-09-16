@@ -109,7 +109,7 @@
                 "fraqueza": "Mágia"
             },
             {
-                "fraqueza": "Sangramento(Sangramento)"
+                "fraqueza": "Sangramento"
             }
         ],
         "resistencias": [
@@ -1261,6 +1261,64 @@
         "resistencias": [
             {
                 "resistencia": "Alta resistência a Veneno e Toxina"
+            }
+        ]
+    },
+    "sanctuaryGuardian": {      
+        "nome": "Sanctuary Guardian ( Guardião do Santuário )",
+        "nome2": "Sanctuary Guardian",
+        "img": "../../assets/images/sanguardian.jpg",
+        "vida": "NG 2,500",
+        "vidaNG": "NG+ 4,019",
+        "almas": "NG 30k",
+        "almasNG": "NG+ 60k",
+        "desc": "Uma criatura quimérica, semelhante a uma manticora, com corpo de leão, asas e uma cauda de escorpião venenosa. Ele guarda ferozmente a entrada para o Santuário de Oolacile.",
+        "loc": "Jardim do Santuário (Sanctuary Garden), a primeira área do conteúdo 'Artorias of the Abyss' (DLC).",
+        "historias": [
+            {
+                "titulo": "Guardião de Oolacile",
+                "historia": "Esta besta mágica serve como o primeiro e principal guardião do Santuário, um refúgio que dá acesso à terra perdida de Oolacile. Seu dever é impedir que qualquer intruso profane o local."
+            },
+            {
+                "titulo": "Poder Elemental",
+                "historia": "O guardião é capaz de conjurar poderosos raios com seus chifres e lançar ataques de veneno com sua cauda de serpente, demonstrando sua natureza mágica e perigosa."
+            },
+            {
+                "titulo": "Um Desafio Recorrente",
+                "historia": "Após ser derrotado, o jogador encontrará mais dois Guardiões do Santuário na mesma área, provando que não era uma criatura única, mas sim parte de uma espécie que protege a região."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almaboss.webp",
+                "desc": "Alma do Guardião",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/guardian.tail.png",
+                "desc": "Cauda do Guardião",
+                "chance": "Cortando sua cauda"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "Humanidade",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Fogo"
+            },
+            {
+                "fraqueza": "Sua cabeça (recebe dano extra)"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a Magia"
+            },
+            {
+                "resistencia": "Resistência a Raio (Lightning)"
             }
         ]
     }
