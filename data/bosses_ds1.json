@@ -1439,6 +1439,63 @@
                 "resistencia": "Alta resistência a Fogo e Raio (Lightning)"
             }
         ]
+    },
+
+    "kalameet": {
+        "nome": "Black Dragon Kalameet ( Dragão Negro Kalameet )",
+        "nome2": "Black Dragon Kalameet",
+        "img": "../../assets/images/kalameet.jpg",
+        "vida": "NG 5,400",
+        "vidaNG": "NG+ 8,478",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 120k",
+        "desc": "O último dos Dragões Antigos, uma calamidade de um olho só temida até mesmo pelos deuses de Anor Londo. Sua ferocidade e seu sopro de fogo negro o tornam um dos adversários mais perigosos de Lordran.",
+        "loc": "No vale da Floresta Real (Royal Wood), acessível por uma escada perto da arena de Artorias. Kalameet só pode ser enfrentado no chão após ser derrubado dos céus por Hawkeye Gough.",
+        "historias": [
+            {
+                "titulo": "A Calamidade de Lordran",
+                "historia": "Kalameet é uma lenda viva, um sobrevivente da guerra ancestral contra os dragões. Seu poder era tão imenso que nem mesmo Anor Londo ousou provocá-lo. Seu nome é sinônimo de desastre e calamidade."
+            },
+            {
+                "titulo": "A Flecha do Gigante",
+                "historia": "Para ter uma chance justa contra Kalameet, o jogador precisa da ajuda de Hawkeye Gough, o arqueiro gigante e um dos Quatro Cavaleiros de Gwyn. Com um único e poderoso disparo de seu arco, Gough fere a asa do dragão, forçando-o a lutar no chão."
+            },
+            {
+                "titulo": "O Olho que Amaldiçoa",
+                "historia": "O olho brilhante de Kalameet não é apenas para ver; ele pode marcar um alvo com o 'Olho da Calamidade', uma maldição que dobra todo o dano que a vítima recebe. Este poder aterrorizante é o que solidifica sua reputação."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/calameetanel.png",
+                "desc": "Anel da Calamidade",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/obsidianespada.png",
+                "desc": "Espada Grande de Obsidiana",
+                "chance": "Cortando sua cauda"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "Dano físico (especialmente na cabeça após seus ataques)"
+            },
+            {
+                "fraqueza": "Raio (Lightning), com menor eficácia"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Resistência extremamente alta a Magia"
+            },
+            {
+                "resistencia": "Resistência extremamente alta a Fogo"
+            },
+            {
+                "resistencia": "Imune a Veneno e Toxina"
+            }
+        ]
     }
 
 
