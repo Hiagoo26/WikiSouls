@@ -1206,6 +1206,7 @@
             }
         ]
     },
+
     "tauros": {
          "nome": "Taurus Demon ( Demônio Touro )",
         "nome2": "Taurus Demon",
@@ -1264,6 +1265,7 @@
             }
         ]
     },
+
     "sanctuaryGuardian": {      
         "nome": "Sanctuary Guardian ( Guardião do Santuário )",
         "nome2": "Sanctuary Guardian",
@@ -1322,6 +1324,7 @@
             }
         ]
     },
+
     "artorias": {
         "nome": "Knight Artorias, the Abysswalker ( Cavaleiro Artorias, o Andarilho do Abismo )",
         "nome2": "Knight Artorias",
@@ -1378,6 +1381,63 @@
                 "resistencia": "Imune a Toxina"
             }
             
+        ]
+    },
+
+    "manus": {
+        "nome": "Manus, Father of the Abyss ( Manus, Pai do Abismo )",
+        "nome2": "Manus, Father of the Abyss",
+        "img": "../../assets/images/manus.jpg",
+        "vida": "NG 6,665",
+        "vidaNG": "NG+ 10,464",
+        "almas": "NG 60k",
+        "almasNG": "NG+ 120k",
+        "desc": "Um Homem Primordial cuja humanidade enlouqueceu, transformando-o no Pai do Abismo. Agora uma besta aterrorizante e de poder imenso, ele ataca com uma fúria desesperada, procurando por seu pingente perdido.",
+        "loc": "No fundo do Abismo (Chasm of the Abyss), após atravessar o município de Oolacile (Oolacile Township).",
+        "historias": [
+            {
+                "titulo": "O Homem Primordial",
+                "historia": "Manus já foi humano. Sua tumba foi profanada pelos feiticeiros de Oolacile em busca de poder, despertando sua Humanidade adormecida. Essa Humanidade cresceu sem controle, transformando-o em uma força da natureza e dando origem ao Abismo."
+            },
+            {
+                "titulo": "A Busca Desesperada",
+                "historia": "A fúria de Manus é motivada por uma perda profunda: seu pingente quebrado, um item de grande valor sentimental. Em sua loucura, ele estende sua mão através do tempo e do espaço, sequestrando a Princesa Dusk por confundi-la com o dono do pingente."
+            },
+            {
+                "titulo": "A Queda de um Herói",
+                "historia": "Foi Manus quem derrotou o Cavaleiro Artorias. Ele é a verdadeira fonte da corrupção que consumiu Oolacile e quebrou o espírito do lendário cavaleiro, forçando o jogador a viajar ao passado para terminar a batalha que o próprio Artorias não pôde vencer."
+            }
+        ],
+        "drops": [
+            {
+                "img": "../../assets/images/almamanus.png",
+                "desc": "Alma de Manus",
+                "chance": "Garantido"
+            },
+            {
+                "img": "../../assets/images/humanidade.webp",
+                "desc": "10x Humanidade",
+                "chance": "Garantido"
+            }
+        ],
+        "fraquezas": [
+            {
+                "fraqueza": "O Pingente de Prata (Silver Pendant) para defletir sua magia negra"
+            },
+            {
+                "fraqueza": "Ataques físicos (é menos resistente a dano físico do que mágico)"
+            },
+            {
+                "fraqueza": "Vulnerável após seus longos combos de ataque"
+            }
+        ],
+        "resistencias": [
+            {
+                "resistencia": "Alta resistência a todas as fontes de magia"
+            },
+            {
+                "resistencia": "Alta resistência a Fogo e Raio (Lightning)"
+            }
         ]
     }
 
