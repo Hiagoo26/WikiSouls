@@ -75,14 +75,14 @@ aside {
     text-align: center;
     transition: all 0.7s ease-in-out;
 }
-
+ 
 .links > p {
     color: white;
     font-family: var(--fonttext);
     font-size: 1em;
 }
 
-img {
+.ds1images {
     display: block;
     margin: 0 auto;
     border: 3px solid var(--firstcolor);
