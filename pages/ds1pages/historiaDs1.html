@@ -24,6 +24,21 @@
             max-width: 100%;     
             height: auto;
         }
+
+        .asidehistoria {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-items: center;
+            margin-top: 30px;
+        }
+
+        .asidehistoria img {
+            width: 100%;
+            max-width: 250px; /* Ou 180 nós 2 (Acho q é o ideal pra celular)*/
+            height: 250px;
+            border: 2px solid var(--firstcolor);
+        }
+
     </style>
 </head>
 <body>
@@ -48,6 +63,21 @@
                     <source media="(max-width: 768px)" srcset="../../assets/images/eraantigos2m.jpg">
                     <img src="../../assets/images/eraantigos2.jpg" alt="Era dos Antigos segunda imagem" class="imgh">
                 </picture>
+                <h2 class="dsrh">O Advento do Fogo e as Almas dos Lordes</h2>
+                <p class="textds1">Então, das profundezas, surgiu o Fogo. A Primeira Chama trouxe consigo a disparidade: calor e frio, vida e morte, e luz e escuridão. E dentro das chamas, quatro seres encontraram as Almas dos Lordes, fontes de poder imenso.
+                    <ul style="color: white; text-align: justify; font-size: 1em; font-family: var(--fonttext); margin: 0 15px; margin-top: 10px;">
+                        <li>Gwyn, o Senhor da Luz Solar, encontrou a Alma da Luz.</li>
+                        <li>A Bruxa de Izalith, encontrou a Alma da Vida.</li>
+                        <li>Nito, o Primeiro dos Mortos, encontrou a Alma da Morte.</li>
+                        <li> E o Pigmeu Furtivo, um ancestral esquecido da raça humana, encontrou a quarta alma única: a Alma Escura (The Dark Soul).</li>
+                    </ul>
+                </p>
+                <aside class="asidehistoria">
+                    <img src="../../assets/images/gwyn2.webp" alt="gwyn">
+                    <img src="../../assets/images/bruxa.webp" alt="Bruxa de Izalith">
+                    <img src="../../assets/images/nito.webp" alt="Nito">
+                    <img src="../../assets/images/pigmeu.webp" alt="Pigmeu furtivo">
+                </aside>
             </article>
         </section>
     </main>
