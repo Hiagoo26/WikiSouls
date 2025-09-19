@@ -139,3 +139,11 @@ footer {
     color: white;
     transition: 1s;
 }
+
+/*Responsividade*/
+
+@media (max-width: 480px) {
+    .title {
+        display: none;
+    }
+}
