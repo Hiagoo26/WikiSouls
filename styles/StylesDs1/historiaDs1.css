@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/*Tive que criar esse arquivo pois so linkar no ds1.css não tava dando certo*/
 main {
     margin-top: 50px;
     display: flex;
@@ -80,14 +80,6 @@ aside {
     color: white;
     font-family: var(--fonttext);
     font-size: 1em;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    border: 3px solid var(--firstcolor);
-    height: 150px;
-    width: 150px;
 }
 
 .links > p, .ds1images {
