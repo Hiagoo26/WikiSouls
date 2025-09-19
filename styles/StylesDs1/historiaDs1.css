@@ -2,8 +2,8 @@
 /*Tive que criar esse arquivo pois so linkar no ds1.css não tava dando certo*/
 main {
     margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    display: block;
+    justify-items: center;
 }
 
 /*Titulo e indrodução*/
