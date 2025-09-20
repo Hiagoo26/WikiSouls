@@ -1,9 +1,8 @@
 @charset "UTF-8";
 /*Tive que criar esse arquivo pois so linkar no ds1.css não tava dando certo*/
 main {
-    margin-top: 50px;
-    display: block;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /*Titulo e indrodução*/
