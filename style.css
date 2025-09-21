@@ -18,6 +18,7 @@
 
 
 body{
+    padding-top: 120px ;
     margin: auto;
     background-color: var(--primarycolor);
 }
@@ -26,11 +27,16 @@ body{
 
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--primarycolor);
     border-bottom: 5px solid var(--firstcolor);
-    align-items: center;
-    position: relative;
     height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .title {
@@ -53,11 +59,31 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.header-btn {
+    display: flex;
+    gap: 15px;
+    margin-right: 100px;
+}
 
+.btnheader1, .btnheader2 {
+    padding: 10px 50px;
+    cursor: pointer;
+    background-color: var(--primarycolor);
+    border: 2px solid var(--firstcolor);
+    border-radius: 20px;
+    color: var(--firstcolor);
+    transition: background-color 0,3s ease, color 0.3s ease;
+}
+
+.btnheader1:hover, .btnheader2:hover {
+    background-color: var(--firstcolor);
+    color: var(--primarycolor);
+    transition: 3s;
+}
 /*Main*/
 
 #main {
-    margin-top: 200px;
+    margin-top: 100px;
     justify-items: center;
     align-items: end;
     font-family: var(--fonttext);
