@@ -7,7 +7,7 @@ function criaModal() {
                 <form id="formLogin">
                     <input type="email" id="email" placeholder="E-mail" required style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 5px; border: 1px solid var(--firstcolor);">
                     <input type="password" id="senha" placeholder="Senha" required style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 5px; border: 1px solid var(--firstcolor);">
-                    <button type="submit" style="width: 100%; padding: 5px; margin: 8px 0; border-radius: 5px; background-color: var(--firstcolor); color: white; font-family: var(--font1);"> ENTRAR </button>
+                    <button type="submit" style=" width: 50%; padding: 10px; margin-top: 12px;border: 1px solid var(--firstcolor); border-radius: 6px; background-color: var(--firstcolor); color: white;font-family: var(--font1); font-size: 1rem; cursor: pointer; transition: background 0.3s ease;"> ENTRAR </button>
                 </form>
             </div>
         </div>
@@ -18,7 +18,16 @@ function criaModal() {
     const fechar = document.getElementById("fecharLogin");
     const form = document.getElementById("formLogin");
 
-    fechar.addEventListener("click", () => modal.classList.add("hidden"));
+    fechar.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.add("hidden");
+        }
+    });
+
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -36,4 +45,4 @@ function abrirLogin() {
     document.getElementById("loginModal").classList.remove("hidden");
 }
 
-// Ajustar o fechar, e sair ao clicar fora, ajustar tambem o style do btn ENTRAR
+// Refazer, pra ficar dinamico
