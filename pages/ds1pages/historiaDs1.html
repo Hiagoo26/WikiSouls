@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../styles/StylesDs1/historiaDs1.css">
     <title>Historia Dark Souls 1</title>
@@ -62,8 +63,8 @@
         <h1 class="title">Dark Souls Wiki</h1>
         <a href="../ds1.html"><img src="../../assets/images/fogueira.png" alt="fogueira ds" class="bonfire"></a>
         <div class="header-btn">
-            <button class="btnheader1">Entrar</button>
-            <button class="btnheader2">Cadastre-se</button>
+            <button class="btnheader1" onclick="abrirLogin()">Entrar</button>
+            <button class="btnheader2" onclick="abrirCadastro()">Cadastre-se</button>
         </div>
     </header>
     <main>
@@ -154,5 +155,7 @@
     <footer>
         <p class="foot">Site desenvolvido por <a href="https://github.com/Hiagoo26" target="_blank" rel="external" class="link">Hiago</a></p>
     </footer>
+
+    <script src="../../scripts/modal-login.js"></script>
 </body>
 </html>
