@@ -39,10 +39,10 @@
     </header>
     <!-- Side Bar -->
     <div id="overlay" class="overlay hidden">
-        <aside id="sideBar" class="sideBarStyle">
+        <aside id="sideBar" class="sideBar">
             <i class="fa-solid fa-xmark close" id="fecharSideBar"></i>
-            <div>
-                <h1 class="title">Dark Souls Wiki</h1>
+            <nav>
+                <h1>Dark Souls Wiki</h1>
                 <ul>
                     <li><a href="">Início</a></li>
                     <li><a href="">Dark Souls I</a></li>
@@ -50,10 +50,10 @@
                     <li><a href="">Dark Souls III</a></li>
                 </ul>
                 <div class="sideBar-btns">
-                    <button class="btnheader1" onclick="abrirLogin()">Entrar</button>
-                    <button class="btnheader2" onclick="abrirCadastro()">Cadastre-se</button>
+                    <button class="btnheader1" onclick="abrirLogin()" id="btnLogin">Entrar</button>
+                    <button class="btnheader2" onclick="abrirCadastro()" id="btnCadastro">Cadastre-se</button>
                 </div>
-            </div>
+            </nav>
         </aside>
     </div>
     <main id="main">
@@ -79,4 +79,3 @@
     <script src="scripts/sideBar.js"></script>
 </body>
 </html>
-

@@ -81,7 +81,7 @@ body{
     transition: 3s;
 }
 
-/* SideBar */
+/* Btn SideBar */
 
 .menu-button {
     display: none;
@@ -103,6 +103,8 @@ body{
     transform: scale(1.1);
 }
 
+/*Fog sidebar*/
+
 .overlay {
     position: fixed;
     top: 0;
@@ -114,44 +116,86 @@ body{
     display: flex;
 }
 
+.overlay::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%);
+    background-size: 50% 50%;
+    animation: fog 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+@keyframes fog {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-25%, -10%); }
+    100% { transform: translate(0, 0); }
+    
+}
+
 .overlay.hidden {
     display: none;
 }
 
-.sideBarStyle {
-    position: relative;
-    width: 250px;
+/* Side Bar */
+.sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
     height: 100%;
-    background: var(--primarycolor);
+    background: #1c1c1c;
     border-right: 3px solid var(--firstcolor);
     color: var(--firstcolor);
     padding: 20px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    z-index: 2000;
 }
 
-.sideBarStyle.mostra {
+.sideBar.mostra {
     transform: translateX(0);
 }
 
-.sideBarStyle div ul {
-    list-style: none;
+.sideBar nav h1 {
+    font-family: var(--font1);
+    color: white;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    word-wrap: break-word;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px var(--firstcolor);
+}
+
+.sideBar nav ul {
     padding: 0;
-    margin-top: 50px; 
+    margin-top: 50px;
+    margin-bottom: 200px; 
+    margin-left: 20px;
 }
 
-.sideBarStyle div ul li {
-    margin-bottom: 20px 0;
+.sideBar nav ul li {
+    margin-bottom: 50px;
 }
 
-.sideBarStyle div ul li a {
-    text-decoration: none;
-    color: var(--firstcolor);
+.sideBar nav ul li a {
+    text-decoration: underline;
+    color: white;
     font-family: var(--font1);
     font-size: 1.2rem;
 }
 
-.sideBarStyle i {
+.sideBar nav ul li a:hover {
+    color: var(--firstcolor);
+    transition:  color 1s;
+}
+
+.sideBar i {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -161,13 +205,10 @@ body{
 }
 
 .sideBar-btns {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: auto;
 }
 
 
