@@ -144,6 +144,7 @@ body{
 
 /* Side Bar */
 .sideBar {
+    margin: auto;
     position: fixed;
     top: 0;
     left: 0;
