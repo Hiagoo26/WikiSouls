@@ -17,7 +17,31 @@
             <button class="btnheader1" onclick="abrirLogin()">Entrar</button>
             <button class="btnheader2" onclick="abrirCadastro()">Cadastre-se</button>
         </div>
+        <button class="menu-button" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448">
+                <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+            </svg>
+        </button>
     </header>
+    <!-- Side Bar -->
+    <div id="overlay" class="overlay hidden">
+        <aside id="sideBar" class="sideBarStyle">
+            <i class="fa-solid fa-xmark close" id="fecharSideBar"></i>
+            <div>
+                <h1 class="title">Dark Souls Wiki</h1>
+                <ul>
+                    <li><a href="">Início</a></li>
+                    <li><a href="">Dark Souls I</a></li>
+                    <li><a href="">Dark Souls II</a></li>
+                    <li><a href="">Dark Souls III</a></li>
+                </ul>
+                <div class="sideBar-btns">
+                    <button class="btnheader1" onclick="abrirLogin()">Entrar</button>
+                    <button class="btnheader2" onclick="abrirCadastro()">Cadastre-se</button>
+                </div>
+            </div>
+        </aside>
+    </div>
     <main>
         <section class="container">
             <article>
@@ -75,5 +99,6 @@
     </footer>
 
     <script src="../scripts/modal-login.js"></script>
+    <script src="../scripts/sideBar.js"></script>
 </body>
 </html>
