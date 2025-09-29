@@ -5,13 +5,21 @@ const fecharSideBar = document.getElementById('fecharSideBar');
 const btnLogin = document.getElementById('btnLogin');
 const btnCadastro = document.getElementById('btnCadastro');
 
+gsap.set(sideBar, {x: "-100%"});
+gsap.set(overlay, {autoAlpha: 0});
+
+const sideBarTimeline = gsap.timeline({paused: true});
+sideBarTimeline
+    .to(overlay, {autoAlpha: 1, duration: 0.5, ease: "power3.inOut"})
+    .to(sideBar, {x: 0, duration: 0.5, ease: "power3.out"}, "<")
+
 function fechaSideBar() {
-    sideBar.classList.remove("mostra");
+    sideBarTimeline.reverse();
     overlay.classList.add("hidden");
 }
 
 function abrirSideBar() {
-    sideBar.classList.add("mostra");
+    sideBarTimeline.play();
     overlay.classList.remove("hidden");
 }
 
@@ -40,3 +48,6 @@ btnCadastro.addEventListener("click", () => {
     fechaSideBar();
     abrirCadastro();
 });
+
+
+//Arrumar a animação quando fecha

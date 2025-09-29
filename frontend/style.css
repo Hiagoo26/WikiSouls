@@ -155,12 +155,7 @@ body{
     color: var(--firstcolor);
     padding: 20px;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
     z-index: 2000;
-}
-
-.sideBar.mostra {
-    transform: translateX(0);
 }
 
 .sideBar nav h1 {
