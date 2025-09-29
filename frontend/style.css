@@ -256,6 +256,22 @@ body{
     background-color: black
 }
 
+/* Alguns hovers */
+.ds1:hover {
+    scale: 1.1;
+    transition: 1s;
+}
+
+.ds2:hover {
+    scale: 1.1;
+    transition: 1s;
+}
+
+.ds3:hover {
+    scale: 1.1;
+    transition: 1s;
+}
+
 .img {
     height: 300px;
     width: 250px;
@@ -287,8 +303,9 @@ footer {
     transition: 1s;
 }
 
+/* Esconder scrollbar */
 body::-webkit-scrollbar {
-    display: none;
+    display: none;  /*html {overflow-y: scroll;} pode ser um solução futura*/
 }
 
 /*Modal Login: estilo pra ficar escondido*/
