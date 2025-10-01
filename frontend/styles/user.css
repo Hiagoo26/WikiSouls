@@ -1,0 +1,40 @@
+.header-user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    background: #1c1c1c;
+    padding: 8px 15px;
+    border: 1px solid var(--firstcolor);
+    border-radius: 6px;
+    max-width: fit-content;
+    margin-right: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.header-user h3 {
+    margin: 0;
+    font-family: var(--font1);
+    font-size: 1rem;
+    color: var(--firstcolor);
+}
+
+.header-user i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--firstcolor);
+    object-fit: cover;
+    color: #1c1c1c;
+    background: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.header-user i:hover {
+    color: var(--firstcolor);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--firstcolor);
+}
