@@ -324,5 +324,9 @@ body::-webkit-scrollbar {
         display: block;
 
     }
+
+    .text {
+        word-spacing: 1.5px;
+    }
     
 }

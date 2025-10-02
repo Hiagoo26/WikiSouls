@@ -110,3 +110,12 @@ img {
     opacity: 1;
     text-decoration: underline;
 }
+
+@media(max-width: 768px) {
+    
+    .textds1 {
+        word-spacing: 1px;
+    
+    }
+    
+}
