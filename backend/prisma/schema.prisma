@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Status {
+  ONLINE
+  OFFLINE
+  AUSENTE
+  INVISIVEL
+}
+
+model Usuario {
+  id               Int          @id @default(autoincrement())
+  nick             String       @unique @default("Usuário")
+  email            String       @unique
+  senha            String
+  avatar           String?      @default("https://i.imgur.com/default.png")
+  bio              String?      @default("Sou um aventureiro em Lordran.")
+  status           Status       @default(ONLINE)
+  role             Role         @default(USER)
+  posts            Post[]
+  comentarios      Comentario[] // relação inversa
+  likes            Like[] // relação inversa
+  amigosSeguindo   Amizade[]    @relation("Seguindo")
+  amigosSeguidoPor Amizade[]    @relation("SeguidoPor")
+  criadoEm         DateTime     @default(now())
+}
+
+model Post {
+  id           Int          @id @default(autoincrement())
+  titulo       String?
+  conteudo     String
+  criadoEm     DateTime     @default(now())
+  atualizadoEm DateTime     @updatedAt
+  autor        Usuario      @relation(fields: [autorId], references: [id])
+  autorId      Int
+  comentarios  Comentario[] @relation("Comentarios")
+  likes        Like[]       @relation("LikesPost")
+}
+
+model Comentario {
+  id           Int      @id @default(autoincrement())
+  conteudo     String
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+  autor        Usuario  @relation(fields: [autorId], references: [id])
+  autorId      Int
+  post         Post     @relation("Comentarios", fields: [postId], references: [id])
+  postId       Int
+  likes        Like[]   @relation("LikesComentario")
+}
+
+model Like {
+  id           Int         @id @default(autoincrement())
+  usuario      Usuario     @relation(fields: [usuarioId], references: [id])
+  usuarioId    Int
+  post         Post?       @relation("LikesPost", fields: [postId], references: [id])
+  postId       Int?
+  comentario   Comentario? @relation("LikesComentario", fields: [comentarioId], references: [id])
+  comentarioId Int?
+  criadoEm     DateTime    @default(now())
+
+  @@unique([usuarioId, postId, comentarioId])
+}
+
+model Amizade {
+  id         Int      @id @default(autoincrement())
+  seguidor   Usuario  @relation("Seguindo", fields: [seguidorId], references: [id])
+  seguidorId Int
+  seguido    Usuario  @relation("SeguidoPor", fields: [seguidoId], references: [id])
+  seguidoId  Int
+  criadoEm   DateTime @default(now())
+
+  @@unique([seguidorId, seguidoId])
+}
