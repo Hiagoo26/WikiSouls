@@ -12,6 +12,9 @@ function criaModal() {
                         <button type="submit" style=" width: 50%; padding: 10px; margin-top: 12px;border: 1px solid var(--firstcolor); border-radius: 6px; background-color: var(--firstcolor); color: white;font-family: var(--font1); font-size: 1rem; cursor: pointer; transition: background 0.3s ease;"> ENTRAR </button>
                     </form>
                     <div style="margin-top: 15px; text-align: center;">
+                        <a href="#"style="color: var(--firstcolor); text-decoration: none; font-size: 0.9rem; cursos: pointer;"> Esqueceu a Senha? </a>
+                    </div>
+                    <div style="margin-top: 20px; text-align: center;">
                         <a href="#" id="linkCadastro" style="color: var(--firstcolor); text-decoration: none; font-size: 0.9rem; cursos: pointer;"> Ainda não tem uma  conta? Cadastre-se já </a>
                     </div>
                     

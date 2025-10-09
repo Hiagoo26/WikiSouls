@@ -144,70 +144,84 @@ body{
 
 /* Side Bar */
 .sideBar {
-    margin: auto;
+    margin-top: auto;
     position: fixed;
     top: 0;
     left: 0;
     width: 260px;
     height: 100%;
-    background: #1c1c1c;
-    border-right: 3px solid var(--firstcolor);
-    color: var(--firstcolor);
-    padding: 20px;
-    transform: translateX(-100%);
+    color: white;
+    padding: 25px 20px;
     z-index: 2000;
+    background: rgba(28, 28, 28, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    justify-content: flex-start;
 }
 
 .sideBar nav h1 {
     font-family: var(--font1);
     color: white;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-    word-wrap: break-word;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 3px var(--firstcolor);
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px var(--firstcolor);
+    font-weight: 600;
 }
 
 .sideBar nav ul {
     padding: 0;
-    margin-top: 50px;
-    margin-bottom: 200px; 
-    margin-left: 20px;
+    margin: 0;
+    list-style: none; 
 }
 
 .sideBar nav ul li {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .sideBar nav ul li a {
-    text-decoration: underline;
-    color: white;
+    text-decoration: none;
+    color: #e0e0e0;
     font-family: var(--font1);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .sideBar nav ul li a:hover {
-    color: var(--firstcolor);
-    transition:  color 1s;
+    color: white;
+    background: var(--firstcolor);
+    transform: translateX(10px);
 }
 
 .sideBar i {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
     cursor: pointer;
     color: var(--firstcolor);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sideBar i:hover {
+    color: var(--firstcolor);
+    transform: rotate(90deg);
 }
 
 .sideBar-btns {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: auto;
+    margin-top: auto; 
+    padding-top: 20px; 
 }
-
-
 
 /*Main*/
 
