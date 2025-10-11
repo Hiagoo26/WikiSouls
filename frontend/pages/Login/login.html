@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../styles/login.css">
+    <title>Login - WikiSouls</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title"><a href="../../index.html" style="color: white; text-decoration: none;">Voltar</a></h1>
+        <a href="index.html"><img src="../../assets/images/fogueira.png" alt="fogueira ds" class="bonfire"></a>
+    </header>
+    <main>
+         <section class="login">
+            <div id="telaLogin" class="form-container">
+                <h2>LOGIN</h2>
+                <form id="formLogin">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                    <button type="submit">ENTRAR</button>
+                </form>
+                <div class="form-links">
+                    <a href="#">Esqueceu a Senha?</a>
+                    <a href="#" id="linkCadastro">Ainda não tem uma conta? Cadastre-se já</a>
+                </div>
+            </div>
+
+            <div id="telaCadastro" class="form-container" style="display: none;">
+                <h2>CADASTRO</h2>
+                <form id="formCadastro">
+                    <input type="text" id="nomeCadastro" placeholder="Nome" required>
+                    <input type="email" id="emailCadastro" placeholder="E-mail" required>
+                    <input type="password" id="senhaCadastro" placeholder="Senha" required>
+                    <button type="submit">CADASTRAR</button>
+                </form>
+                 <div class="form-links">
+                    <a href="#" id="linkLogin">Já tem uma conta? Faça login</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="carrosel">
+            </section>
+    </main>
+</body>
+</html>
