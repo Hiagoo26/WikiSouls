@@ -72,6 +72,15 @@ model Amizade {
   @@unique([seguidorId, seguidoId])
 }
 
+model SenhaReset {
+  id Int @id @default(autoincrement())
+  email String
+  tokenHash String
+  usado Boolean @default(false)
+  criadoEm DateTime @default(now())
+  expiaEm DateTime
+}
+
 enum Role {
   USER
   ADMIN
