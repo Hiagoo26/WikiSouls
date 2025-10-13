@@ -3,7 +3,7 @@
 main {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 87.5vh;
 }
 
 .login, .carrosel {
@@ -33,6 +33,13 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.form-container form {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .form-container h2 {
