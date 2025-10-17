@@ -42,8 +42,29 @@
         </section>
 
         <section class="carrosel">
-            </section>
+            <img src="../../assets/images/ds1.jpg" alt="Dark Souls 1" id="carroselImg">
+        </section>
     </main>
+
+    <script>
+        const imagens = [
+            "../../assets/images/ds1.jpg",
+            "../../assets/images/ds2.jpg",
+            "../../assets/images/ds3.jpg",
+        ]
+        let index = 0;
+        function trocarImagem() {
+            index = (index + 1) % imagens.length;
+            const img = document.getElementById("carroselImg");
+            img.style.opacity = 0;
+            setTimeout(() => {
+                img.src =imagens[index];
+                img.style.opacity = 1;
+            }, 500);
+        }
+
+        setInterval(trocarImagem, 4000);
+    </script>
 
     <script src="../../scripts/login.js"></script>
 </body>
