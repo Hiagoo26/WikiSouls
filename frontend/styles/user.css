@@ -6,9 +6,9 @@
     justify-content: flex-end;
     gap: 12px;
     background: #1c1c1c;
-    padding: 8px 15px;
+    padding: 8px 25px;
     border: 1px solid var(--firstcolor);
-    border-radius: 6px;
+    border-radius: 50px;
     max-width: fit-content;
     margin-right: 100px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/user.css">
+    <link rel="stylesheet" href="../../styles/comunidade.css">
+    <title>Comunidade Wiki Souls</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="wiki-header">
+        <h1>Dark Souls Wiki</h1>
+        <div class="header-user">
+            <h3>Nickname</h3>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="wiki-container">
+        <!-- Sidebar -->
+        <aside class="wiki-sidebar">
+            <ul>
+                <li><a href="../../index.html">Página Inicial</a></li>
+                <li><a href="../ds1.html">Dark Souls I</a></li>
+                <li><a href="../ds2.html">Dark Souls II</a></li>
+                <li><a href="../ds3.html">Dark Souls III</a></li>
+                <li><a href="comunidade.html" class="active">Comunidade</a></li>
+            </ul>
+        </aside>
+
+        <!-- POSTS -->
+        <section class="wiki-posts">
+            <!-- Post Exemplo -->
+            <article class="post">
+                <div class="post-header">
+                    <img src="../../assets/users/artorias.jpg" alt="Artorias" class="avatar">
+                    <div>
+                        <h3 class="username">Artorias</h3>
+                        <span class="date">17/10/2025</span>
+                    </div>
+                </div>
+                <p class="content">
+                    Essa build é perfeita pra quem quer usar armas pesadas logo no começo do jogo.
+                    Comece com a classe Cavaleiro, foque em Força e Vigor, e equipe o Espadão assim que puder!
+                </p>
+                <img src="../../assets/images/artorias2.jpg" alt="Build de Força" class="post-image">
+            </article>
+
+            <article class="post">
+                <div class="post-header">
+                    <img src="../../assets/users/solaire.jpg" alt="Solaire" class="avatar">
+                    <div>
+                        <h3 class="username">Solaire</h3>
+                        <span class="date">15/10/2025</span>
+                    </div>
+                </div>
+                <p class="content">
+                    Na área das Muralhas de Lothric, antes do primeiro boss, tem um cavaleiro que dropa
+                    cerca de 4000 almas por run — ótimo pra upar no early game. PRAISE THE SUN ☀️
+                </p>
+                <img src="../../assets/posts/farm.jpg" alt="Farm de Almas" class="post-image">
+            </article>
+
+            <article class="post">
+                <div class="post-header">
+                    <img src="../../assets/users/gwyn.jpg" alt="Gwyn" class="avatar">
+                    <div>
+                        <h3 class="username">Gwyn</h3>
+                        <span class="date">14/10/2025</span>
+                    </div>
+                </div>
+                <p class="content">
+                    Qual foi o boss mais difícil pra vocês? Pra mim foi a Irmã Friede — a terceira fase é insana.
+                </p>
+                <img src="../../assets/posts/friede.jpg" alt="Boss Fight" class="post-image">
+            </article>
+
+            <!-- Botão de Novo Post -->
+            <button class="floating-btn" id="openModal">＋</button>
+        </section>
+
+        <!-- Ranking -->
+        <aside class="wiki-ranking">
+            <h3>Ranking Populares</h3>
+            <ol>
+                <li>Imagem do Dark Souls Remastered</li>
+                <li>Dica pro Dark Souls III</li>
+                <li>Qual foi a primeira arma que vocês acharam?</li>
+                <li>Onde encontrar a espada lendária?</li>
+            </ol>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wiki-footer">
+        <p>Comunidade WikiSouls © 2025</p>
+    </footer>
+
+    <!-- Modal Novo Post -->
+    <div class="modal hidden" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar Novo Post</h2>
+                <span class="close-modal" id="closeModal">&times;</span>
+            </div>
+
+            <form class="post-form">
+                <textarea id="postText" placeholder="O que você quer compartilhar?" maxlength="500"></textarea>
+
+                <div class="form-actions">
+                    <label class="file-label" for="postImage">📷 Anexar Imagem</label>
+                    <input type="file" id="postImage" accept="image/*">
+                    <button type="button" id="publishPost" class="publish-btn">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="../../scripts/Modals/NewPostModal.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+:root {
+    --firstcolor: #AB966F;
+    --primarycolor: #161615;
+    --font1: DSsb, serif;
+    --fonttext: Noto, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primarycolor);
+    color: var(--firstcolor);
+    font-family: var(--fonttext);
+}
+
+/* === HEADER === */
+.wiki-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    border-bottom: 2px solid var(--firstcolor);
+    background-color: var(--primarycolor);
+}
+
+.wiki-header h1 {
+    font-family: var(--font1);
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* === CONTEUDO PRINCIPAL === */
+.wiki-container {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* === SIDEBAR === */
+.wiki-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wiki-sidebar a {
+    display: block;
+    text-decoration: none;
+    color: var(--firstcolor);
+    padding: 12px 0;
+    font-family: var(--font1);
+    transition: color 0.3s ease;
+}
+
+.wiki-sidebar a:hover {
+    color: #fff;
+}
+
+/* === POSTS === */
+.wiki-posts {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--firstcolor);
+    color: #fff;
+}
+
+.post-placeholder {
+    text-align: center;
+    padding: 100px 0;
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+.post {
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--firstcolor);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(171, 150, 111, 0.3);
+}
+
+/* Cabeçalho do post (foto + nome + data) */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--firstcolor);
+    object-fit: cover;
+}
+
+.username {
+    color: var(--firstcolor);
+    font-family: var(--font1);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.date {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-family: var(--fonttext);
+}
+
+/* Texto */
+.content {
+    color: #ddd;
+    font-family: var(--fonttext);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 10px 0 15px 0;
+}
+
+/* Imagem do post */
+.post-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--firstcolor);
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Btn Novo Post*/
+.floating-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--firstcolor);
+    color: var(--primarycolor);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(171, 150, 111, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(171, 150, 111, 0.6);
+    background-color: #c8b27e;
+}
+
+/* === RANKING === */
+.wiki-ranking {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--firstcolor);
+}
+
+.wiki-ranking h3 {
+    font-family: var(--font1);
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.wiki-ranking ol {
+    color: var(--firstcolor);
+    padding-left: 20px;
+}
+
+/* === FOOTER === */
+.wiki-footer {
+    border-top: 2px solid var(--firstcolor);
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+/* === RESPONSIVO === */
+
+@media (max-width: 768px) {
+    .wiki-container {
+        grid-template-columns: 1fr;
+    }
+
+    .wiki-sidebar, .wiki-ranking {
+        display: none;
+    }
+
+    .wiki-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-user {
+        display: none;
+    }
+
+    .post {
+        padding: 12px;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .username {
+        font-size: 1rem;
+    }
+
+    .post-image {
+        max-height: 300px;
+    }
+
+    .floating-btn {
+        position: fixed;
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+    }
+
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Classe para ativar o modal */
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal-content {
+    background-color: rgba(22, 22, 21, 0.98);
+    border: 2px solid var(--firstcolor);
+    border-radius: 15px;
+    padding: 25px 30px;
+    width: 550px;
+    max-width: 90%;
+    box-shadow: 0 0 25px rgba(171, 150, 111, 0.2);
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(171, 150, 111, 0.3);
+}
+
+.modal-header h2 {
+    font-family: var(--font1);
+    color: var(--firstcolor);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-modal {
+    font-size: 1.8rem;
+    color: var(--firstcolor);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+    color: #fff;
+}
+
+/* Formulário */
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-form textarea {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--firstcolor);
+    border-radius: 10px;
+    padding: 12px;
+    color: #eee;
+    font-family: var(--fonttext);
+    resize: none;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+    min-height: 80px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.post-form textarea:focus {
+    outline: none;
+    border-color: #c8b27e;
+    box-shadow: 0 0 15px rgba(171, 150, 111, 0.3);
+}
+
+/* Estilização da Barra de Rolagem do Textarea */
+.post-form textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.post-form textarea::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin-block: 5px;
+}
+
+.post-form textarea::-webkit-scrollbar-thumb {
+    background: var(--firstcolor);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.post-form textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #c8b27e;
+}
+
+/* Container para os botões */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.file-label {
+    background-color: transparent;
+    color: var(--firstcolor);
+    border: 1px solid var(--firstcolor);
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: var(--fonttext);
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: rgba(171, 150, 111, 0.1);
+    color: #fff;
+}
+
+#postImage {
+    display: none;
+}
+
+.publish-btn {
+    background-color: var(--firstcolor);
+    border: 1px solid var(--firstcolor);
+    color: var(--primarycolor);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--fonttext);
+}
+
+.publish-btn:hover {
+    background-color: #c8b27e;
+    box-shadow: 0 0 15px rgba(171, 150, 111, 0.4);
+}
+
+/* ===== MODAL MOBILE ===== */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .modal-header {
+        justify-content: center;
+        position: relative;
+    }
+
+    .close-modal {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .publish-btn, .file-label {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
