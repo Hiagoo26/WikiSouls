@@ -2,8 +2,7 @@ import bcrypt, { hash } from "bcrypt"
 import jwt from "jsonwebtoken";
 import { prisma } from "../../prisma/cliente.js";
 import { gerarCodigoNumerico, gerarTokenLongo, hashToken } from "../utils/gerarCode.js"
-import { enviarEmail } from "../util/sendEmail.js";
-import bcrypt from "bcrypt"
+import { enviarEmail } from "../utils/sendEmail.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -12,38 +11,55 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 // Cadastro
 export const userCadastrar = async (req, res) => {
-    try{
-        const { email, senha, nick } = req.body;
-        if (!email || !senha || !nick) {
-            return res.status(400).json({ erro: "Preencha todos os campos!"})
-        }
+  try {
+    const { email, senha, nick } = req.body;
 
-        const usuarioExistente = await prisma.usuario
-        .findUnique({ where : {email} });
-        if (usuarioExistente) {
-            return res.status(400).json({ erro: "Email já cadastrado!" });
-        }
-
-        const nickExistente = await prisma.usuario
-        .findUnique({ where : {nick} });
-        if (nickExistente) {
-            return res.status(400).json({ erro: "Esse nick já existe." });
-        }
-
-        const hashedPassword = await bcrypt.hash(senha, 10);
-
-        const novoUsuario = await prisma.usuario.create ({
-            data: {
-                email,
-                senha: hashedPassword,
-                nick },
-            });
-        
-        return res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!", usuario: novoUsuario });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ erro: "Erro ao cadastrar usuário."});
+    if (!email || !senha) {
+      return res.status(400).json({ erro: "Preencha email e senha!" });
     }
+
+    const usuarioExistente = await prisma.usuario.findUnique({ where: { email } });
+    if (usuarioExistente) {
+      return res.status(400).json({ erro: "Email já cadastrado!" });
+    }
+
+    // Só verifica o nick se ele tiver sido enviado
+    if (nick) {
+      const nickExistente = await prisma.usuario.findUnique({ where: { nick } });
+      if (nickExistente) {
+        return res.status(400).json({ erro: "Esse nick já existe." });
+      }
+    }
+
+    const hashedPassword = await bcrypt.hash(senha, 10);
+
+    const baseNick = nick || "Usuário";
+    let finalNick = baseNick;
+
+    let contador = 1;
+    while(await prisma.usuario.findUnique({ where: { nick: finalNick }})) {
+      finalNick = `${baseNick}${contador++}`;
+    }
+
+    const novoUsuario = await prisma.usuario.create({
+      data: {
+        email,
+        senha: hashedPassword,
+        nick: finalNick, // usa padrão se não foi enviado
+      },
+    });
+
+    const token = jwt.sign({ id: novoUsuario.id, nick: novoUsuario.nick },process.env.JWT_SECRET,{ expiresIn: "1h" });
+
+    return res.status(201).json({
+      mensagem: "Usuário cadastrado com sucesso!",
+      token,
+      usuario: novoUsuario,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao cadastrar usuário." });
+  }
 };
 
 //Login
@@ -61,13 +77,13 @@ export const userLogin = async (req, res) => {
             return res.status(400).json({ erro: "Senha incorreta!"});
         }
 
-        const token = jwt.sign({ id: usuario.id, nick: usuario.nick}, JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ id: usuario.id, nick: usuario.nick}, process.env.JWT_SECRET, { expiresIn: "1h" });
 
         res.status(200).json({
             mensagem: "Login efetuado!",
             usuario: { id: usuario.id, nick: usuario.nick, email: usuario.email },
             token,
-        })
+        });
     } catch (error) {
         console.error(error);
         res.status(500).json({ erro: "Erro ao efetuar o login."});

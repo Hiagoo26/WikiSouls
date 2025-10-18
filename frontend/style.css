@@ -73,6 +73,7 @@ body{
     border-radius: 20px;
     color: var(--firstcolor);
     transition: background-color 0,3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
 .btnheader1:hover, .btnheader2:hover {

@@ -118,8 +118,119 @@
             </form>
         </div>
     </div>
+
+    <!-- Modal de Configuração de Perfil -->
+    <div class="modal" id="setupModal">
+        <div class="modal-content setup">
+            <h2>Personalize seu perfil</h2>
+            <div class="avatar-upload">
+            <label for="avatarInput">
+                <img id="avatarPreview" src="../../assets/images/usuario.png" alt="Avatar" />
+                <span>📷</span>
+            </label>
+            <input type="file" id="avatarInput" accept="image/*" hidden>
+            </div>
+
+            <input type="text" id="nickInput" placeholder="Escolha seu nickname">
+
+            <div class="setup-actions">
+            <button id="saveProfile">Salvar</button>
+            </div>
+        </div>
+    </div>
     
 
     <script src="../../scripts/Modals/NewPostModal.js"></script>
+    <script>
+        console.log("Rodando!")
+        document.addEventListener("DOMContentLoaded", async () => {
+        const modal = document.getElementById("setupModal");
+        const avatarInput = document.getElementById("avatarInput");
+        const avatarPreview = document.getElementById("avatarPreview");
+        const nickInput = document.getElementById("nickInput");
+        const saveBtn = document.getElementById("saveProfile");
+        const token = localStorage.getItem("token");
+
+        // 🔹 Se não tiver token, não mostra modal nem tenta carregar perfil
+        if (!token) {
+            modal.style.display = "none";
+            return;
+        }
+
+        try {
+            // 🔹 Busca os dados do usuário logado
+            const res = await fetch("http://localhost:2611/api/auth/eu", {
+            headers: { "Authorization": `Bearer ${token}` }
+            });
+
+            if (!res.ok) throw new Error("Falha ao verificar usuário.");
+            const user = await res.json();
+
+            console.log("Usuário logado:", user);
+
+            // 🔹 Mostra o modal só se nick for o padrão e avatar for o default
+            if (
+            user.nick === "Usuário" ||
+            user.nick.startsWith("Usuário") ||
+            !user.avatar ||
+            user.avatar.includes("default.png")
+            ) {
+            modal.style.display = "flex";
+            } else {
+            modal.style.display = "none";
+            localStorage.removeItem("needsSetup");
+            }
+
+            // Preview da imagem
+            avatarInput.addEventListener("change", () => {
+            const file = avatarInput.files[0];
+            if (file) avatarPreview.src = URL.createObjectURL(file);
+            });
+
+            // Botão salvar perfil
+            saveBtn.addEventListener("click", async () => {
+            const nick = nickInput.value.trim();
+            if (!nick) return alert("Digite um nickname!");
+
+            // Atualiza nick
+            const resNick = await fetch("http://localhost:2611/api/user/nick", {
+                method: "PATCH",
+                headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify({ nick })
+            });
+
+            if (!resNick.ok) {
+                const erro = await resNick.json();
+                return alert(erro.erro || "Erro ao salvar nickname");
+            }
+
+            // Atualiza avatar se tiver imagem
+            if (avatarInput.files.length > 0) {
+                const formData = new FormData();
+                formData.append("imagem", avatarInput.files[0]);
+                await fetch("http://localhost:2611/api/user/avatar", {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${token}` },
+                body: formData
+                });
+            }
+
+            // Feedback e fechamento suave
+            alert("Perfil atualizado com sucesso!");
+            modal.style.opacity = "0";
+            setTimeout(() => {
+                modal.style.display = "none";
+                localStorage.removeItem("needsSetup");
+                location.reload();
+            }, 300);
+            });
+        } catch (err) {
+            console.error("Erro ao carregar perfil:", err);
+        }
+        });
+    </script>
 </body>
 </html>

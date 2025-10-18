@@ -70,12 +70,12 @@
         </button>
         <a href="../ds1.html"><img src="../../assets/images/fogueira.png" alt="fogueira ds" class="bonfire"></a>
         <div class="header-btn">
-            <button class="btnheader1" onclick="abrirLogin()">Entrar</button>
-            <button class="btnheader2" onclick="abrirCadastro()">Cadastre-se</button>
+            <a href="pages/Login/login.html" class="btnheader1">Entrar</a>
+            <a href="pages/Login/login.html" class="btnheader1">Cadastre-se</a>
         </div>
         <div class="header-user" style="display: none;">
-            <h3>Nickname</h3>
-            <i class="fa-solid fa-user"></i>
+            <a href=""><img class="user-avatar" src="https://i.imgur.com/default.png" alt="Avatar"></a>
+            <a href="" style="text-decoration: none;"><h3 class="user-nick">Nickname</h3></a>
         </div>
     </header>
     <!-- Side Bar -->
@@ -91,9 +91,9 @@
                     <li><a href="../ds3.html">Dark Souls III</a></li>
                     <li><a href="#">Comunidade</a></li>
                 </ul>
-                <div class="sideBar-btns">
-                    <button class="btnheader1" onclick="abrirLogin()" id="btnLogin">Entrar</button>
-                    <button class="btnheader2" onclick="abrirCadastro()" id="btnCadastro">Cadastre-se</button>
+                <div class="header-btn">
+                    <a href="pages/Login/login.html" class="btnheader1">Entrar</a>
+                    <a href="pages/Login/login.html" class="btnheader1">Cadastre-se</a>
                 </div>
             </nav>
         </aside>
@@ -194,7 +194,8 @@
         </div>
     </div>
 
-    <script src="../../scripts/modal-login.js"></script>
+    <script src="../../scripts/login.js"></script>
+    <script src="../../scripts/auth-check.js"></script>
     <script src="../../scripts/sideBar.js"></script>
     <script src="../../scripts/ModalsDs1/historia-ds1.js"></script>
 </body>
