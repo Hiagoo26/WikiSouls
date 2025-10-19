@@ -28,6 +28,7 @@ model Post {
   id           Int          @id @default(autoincrement())
   titulo       String?
   conteudo     String
+  imagemUrl     String?
   criadoEm     DateTime     @default(now())
   atualizadoEm DateTime     @updatedAt
   autorId      Int
