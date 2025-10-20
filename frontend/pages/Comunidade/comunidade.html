@@ -6,21 +6,48 @@
     <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
     <link rel="stylesheet" href="../../styles/user.css">
     <link rel="stylesheet" href="../../styles/comunidade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Comunidade Wiki Souls</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header class="wiki-header">
+        <button class="menu-button" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448">
+                <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+            </svg>
+        </button>
         <h1>Dark Souls Wiki</h1>
+        <img src="../../assets/icons/fogueira.png" alt="bonfire" class="bonfire">
         <div class="header-user">
-            <h3>Nickname</h3>
-            <i class="fa-solid fa-user"></i>
+            <a href=""><img class="user-avatar" src="https://i.imgur.com/default.png" alt="Avatar"></a>
+            <a href="" style="text-decoration: none;"><h3 class="user-nick">Nickname</h3></a>
         </div>
     </header>
 
     <!-- Conteúdo principal -->
     <main class="wiki-container">
         <!-- Sidebar -->
+        <div id="overlay" class="overlay hidden">
+            <aside id="sideBar" class="sideBar">
+                <i class="fa-solid fa-xmark close" id="fecharSideBar"></i>
+                <nav>
+                    <h1>Dark Souls Wiki</h1>
+                    <ul>
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="../ds1.html">Dark Souls I</a></li>
+                        <li><a href="../ds2.html">Dark Souls II</a></li>
+                        <li><a href="../ds3.html">Dark Souls III</a></li>
+                        <li><a href="comunidade.html">Comunidade</a></li>
+                    </ul>
+                    <div class="sideBar-btns">
+                        <a href="pages/Login/login.html" class="btnheader1">Entrar</a>
+                        <a href="pages/Login/login.html" class="btnheader1">Cadastre-se</a>
+                    </div>
+                </nav>
+            </aside>
+        </div>
         <aside class="wiki-sidebar">
             <ul>
                 <li><a href="../../index.html">Página Inicial</a></li>
@@ -30,7 +57,6 @@
                 <li><a href="comunidade.html" class="active">Comunidade</a></li>
             </ul>
         </aside>
-
         <!-- POSTS -->
         <section class="wiki-posts">
             <!-- Post Exemplo -->
@@ -139,8 +165,9 @@
         </div>
     </div>
     
-
+    <script src="../../scripts/auth-check.js"></script>
     <script src="../../scripts/Modals/NewPostModal.js"></script>
+    <script src="../../scripts/sideBar.js"></script>
     <script>
         console.log("Rodando!")
         document.addEventListener("DOMContentLoaded", async () => {
@@ -151,7 +178,6 @@
         const saveBtn = document.getElementById("saveProfile");
         const token = localStorage.getItem("token");
 
-        // 🔹 Se não tiver token, não mostra modal nem tenta carregar perfil
         if (!token) {
             modal.style.display = "none";
             return;

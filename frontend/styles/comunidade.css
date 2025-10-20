@@ -30,6 +30,36 @@ body {
     font-size: 2rem;
 }
 
+.bonfire {
+    display: none;
+    height: 60px;
+    width: 60px;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-button svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--firstcolor);
+    transition: all 1s ease-in-out;
+}
+
+.menu-button:hover svg {
+    fill: white;
+    transform: scale(1.1);
+}
+
 /* === CONTEUDO PRINCIPAL === */
 .wiki-container {
     display: grid;
@@ -38,7 +68,27 @@ body {
     padding: 40px;
 }
 
+.btnheader1, .btnheader2 {
+    padding: 10px 50px;
+    cursor: pointer;
+    background-color: var(--primarycolor);
+    border: 2px solid var(--firstcolor);
+    border-radius: 20px;
+    color: var(--firstcolor);
+    transition: background-color 0,3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.btnheader1:hover, .btnheader2:hover {
+    background-color: var(--firstcolor);
+    color: var(--primarycolor);
+    transition: 3s;
+}
+
 /* === SIDEBAR === */
+
+/* SideBar PC*/
+
 .wiki-sidebar ul {
     list-style: none;
     padding: 0;
@@ -55,6 +105,127 @@ body {
 
 .wiki-sidebar a:hover {
     color: #fff;
+}
+
+
+/* SideBar Celular */
+/* Fog Sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1500;
+    display: flex;
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%);
+    background-size: 50% 50%;
+    animation: fog 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+@keyframes fog {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-25%, -10%); }
+    100% { transform: translate(0, 0); }
+    
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+/* Side Bar */
+.sideBar {
+    margin-top: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    color: white;
+    padding: 25px 20px;
+    z-index: 2000;
+    background: rgba(28, 28, 28, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    justify-content: flex-start;
+}
+
+.sideBar nav h1 {
+    font-family: var(--font1);
+    color: white;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px var(--firstcolor);
+    font-weight: 600;
+}
+
+.sideBar nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; 
+}
+
+.sideBar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sideBar nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-family: var(--font1);
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.sideBar nav ul li a:hover {
+    color: white;
+    background: var(--firstcolor);
+    transform: translateX(10px);
+}
+
+.sideBar i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--firstcolor);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sideBar i:hover {
+    color: var(--firstcolor);
+    transform: rotate(90deg);
+}
+
+.sideBar-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto; 
+    padding-top: 20px; 
 }
 
 /* === POSTS === */
@@ -203,8 +374,20 @@ body {
     }
 
     .wiki-header {
-        flex-direction: column;
-        gap: 10px;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .wiki-header h1 {
+        display: none;
+    }
+
+    .bonfire {
+        display: block;
+        height: 45px;
+        width: 45px;
+        transform: none;
+        position: static;
     }
 
     .header-user {
@@ -237,6 +420,9 @@ body {
         font-size: 1.8rem;
     }
 
+    .menu-button {
+        display: flex;
+    }
 }
 
 
