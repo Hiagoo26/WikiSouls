@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: DSsb;
+    src: url(../assets/fonts/OptimusPrincepsSemiBold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: Noto;
+    src: url(../assets/fonts/NotoSansJP-VariableFont_wght.ttf) format(truetype);
+}
+
 :root {
     --firstcolor: #AB966F;
     --primarycolor: #161615;
