@@ -343,5 +343,29 @@ body::-webkit-scrollbar {
     .text {
         word-spacing: 1.5px;
     }
-    
+
+    .sideBar-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 2px solid var(--firstcolor);
+    }
+
+    .side-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--firstcolor);
+    margin-bottom: 8px;
+    }
+
+    .side-nick {
+    color: var(--firstcolor);
+    font-family: var(--font1);
+    font-size: 1rem;
+    }
+        
 }

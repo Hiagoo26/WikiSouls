@@ -22,14 +22,14 @@ sideBarTimeline
         x: 0,
         duration: 0.4,
         ease: "power2.out"
-    }, "-=0.6") // Ajustei o timing para sincronizar com a nova duração
+    }, "-=0.6")
     .to(menuItems, {
         autoAlpha: 1,
         x: 0,
         duration: 0.4,
         ease: "power2.out",
         stagger: 0.1
-    }, "-=0.4") // Ajustei o timing
+    }, "-=0.4")
     .to(sideBarButtons, {
         autoAlpha: 1,
         x: 0,

@@ -45,6 +45,10 @@
                         <a href="pages/Login/login.html" class="btnheader1">Entrar</a>
                         <a href="pages/Login/login.html" class="btnheader1">Cadastre-se</a>
                     </div>
+                    <div class="sideBar-user" style="display: none;">
+                        <img class="side-avatar" src="https://i.imgur.com/default.png" alt="Avatar">
+                        <h3 class="side-nick">Usuário</h3>
+                    </div>
                 </nav>
             </aside>
         </div>
@@ -58,55 +62,10 @@
             </ul>
         </aside>
         <!-- POSTS -->
-        <section class="wiki-posts">
-            <!-- Post Exemplo -->
-            <article class="post">
-                <div class="post-header">
-                    <img src="../../assets/users/artorias.jpg" alt="Artorias" class="avatar">
-                    <div>
-                        <h3 class="username">Artorias</h3>
-                        <span class="date">17/10/2025</span>
-                    </div>
-                </div>
-                <p class="content">
-                    Essa build é perfeita pra quem quer usar armas pesadas logo no começo do jogo.
-                    Comece com a classe Cavaleiro, foque em Força e Vigor, e equipe o Espadão assim que puder!
-                </p>
-                <img src="../../assets/images/artorias2.jpg" alt="Build de Força" class="post-image">
-            </article>
-
-            <article class="post">
-                <div class="post-header">
-                    <img src="../../assets/users/solaire.jpg" alt="Solaire" class="avatar">
-                    <div>
-                        <h3 class="username">Solaire</h3>
-                        <span class="date">15/10/2025</span>
-                    </div>
-                </div>
-                <p class="content">
-                    Na área das Muralhas de Lothric, antes do primeiro boss, tem um cavaleiro que dropa
-                    cerca de 4000 almas por run — ótimo pra upar no early game. PRAISE THE SUN ☀️
-                </p>
-                <img src="../../assets/posts/farm.jpg" alt="Farm de Almas" class="post-image">
-            </article>
-
-            <article class="post">
-                <div class="post-header">
-                    <img src="../../assets/users/gwyn.jpg" alt="Gwyn" class="avatar">
-                    <div>
-                        <h3 class="username">Gwyn</h3>
-                        <span class="date">14/10/2025</span>
-                    </div>
-                </div>
-                <p class="content">
-                    Qual foi o boss mais difícil pra vocês? Pra mim foi a Irmã Friede — a terceira fase é insana.
-                </p>
-                <img src="../../assets/posts/friede.jpg" alt="Boss Fight" class="post-image">
-            </article>
-
-            <!-- Botão de Novo Post -->
-            <button class="floating-btn" id="openModal">＋</button>
+        <section class="wiki-posts" id="post-list">
         </section>
+        <!-- Botão de Novo Post -->
+        <button class="floating-btn" id="openModal">＋</button>
 
         <!-- Ranking -->
         <aside class="wiki-ranking">
@@ -129,18 +88,39 @@
     <div class="modal hidden" id="postModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Criar Novo Post</h2>
-                <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Criar Novo Post</h2>
+            <span class="close-modal" id="closeModal">&times;</span>
             </div>
 
             <form class="post-form">
-                <textarea id="postText" placeholder="O que você quer compartilhar?" maxlength="500"></textarea>
+            <!-- Campo de título -->
+            <input 
+                type="text" 
+                id="postTitle" 
+                placeholder="Digite o título do post" 
+                maxlength="100" 
+                class="post-title-input"
+            >
 
-                <div class="form-actions">
-                    <label class="file-label" for="postImage">📷 Anexar Imagem</label>
-                    <input type="file" id="postImage" accept="image/*">
-                    <button type="button" id="publishPost" class="publish-btn">Publicar</button>
-                </div>
+            <!-- Campo de texto -->
+            <textarea 
+                id="postText" 
+                placeholder="Escreva seu texto aqui..." 
+                maxlength="500" 
+                class="post-textarea"
+            ></textarea>
+
+            <!-- Pré-visualização da imagem -->
+            <div class="preview-container hidden" id="imagePreviewContainer">
+                <img id="imagePreview" class="image-preview" alt="Prévia da imagem">
+            </div>
+
+            <!-- Upload + Botão -->
+            <div class="form-actions">
+                <label class="file-label" for="postImage">📷 Anexar Imagem</label>
+                <input type="file" id="postImage" accept="image/*">
+                <button type="button" id="publishPost" class="publish-btn">Publicar</button>
+            </div>
             </form>
         </div>
     </div>
@@ -169,7 +149,6 @@
     <script src="../../scripts/Modals/NewPostModal.js"></script>
     <script src="../../scripts/sideBar.js"></script>
     <script>
-        console.log("Rodando!")
         document.addEventListener("DOMContentLoaded", async () => {
         const modal = document.getElementById("setupModal");
         const avatarInput = document.getElementById("avatarInput");
@@ -192,9 +171,6 @@
             if (!res.ok) throw new Error("Falha ao verificar usuário.");
             const user = await res.json();
 
-            console.log("Usuário logado:", user);
-
-            // 🔹 Mostra o modal só se nick for o padrão e avatar for o default
             if (
             user.nick === "Usuário" ||
             user.nick.startsWith("Usuário") ||
@@ -258,5 +234,6 @@
         }
         });
     </script>
+    <script src="../../scripts/comunidade.js"></script>
 </body>
 </html>

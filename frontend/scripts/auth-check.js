@@ -4,60 +4,66 @@ document.addEventListener("DOMContentLoaded", async () => {
   const userAvatar = document.querySelector(".user-avatar");
   const authButtons =
     document.querySelector(".auth-buttons") ||
-    document.querySelector("#auth-buttons") ||
     document.querySelector(".header-btn");
 
   const sidebarButtons = document.querySelector(".sideBar-btns");
+  const sideUser = document.querySelector(".sideBar-user");
+  const sideNick = document.querySelector(".side-nick");
+  const sideAvatar = document.querySelector(".side-avatar");
+
   const token = localStorage.getItem("token");
 
-  // 🧠 Se não tiver token, mostra botões (somente se não for mobile)
   if (!token) {
     if (headerUser) headerUser.style.display = "none";
+    if (sideUser) sideUser.style.display = "none";
 
     if (window.innerWidth > 768) {
       if (authButtons) authButtons.style.display = "flex";
+    } else {
+      if (sidebarButtons) sidebarButtons.style.display = "flex";
     }
 
-    if (sidebarButtons) sidebarButtons.style.display = "flex";
     return;
   }
 
   try {
     const res = await fetch("http://localhost:2611/api/auth/eu", {
-      headers: {
-        "Authorization": `Bearer ${token}`,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     if (!res.ok) throw new Error("Falha ao buscar usuário.");
     const user = await res.json();
 
-    // Atualiza nick e avatar
     if (userNick) userNick.textContent = user.nick || user.email || "Usuário";
     if (userAvatar)
       userAvatar.src = user.avatar || "https://i.imgur.com/default.png";
 
-    // 🔹 Mostra header do usuário
-    if (headerUser) headerUser.style.display = "flex";
+    if (sideNick) sideNick.textContent = user.nick || user.email || "Usuário";
+    if (sideAvatar)
+      sideAvatar.src = user.avatar || "https://i.imgur.com/default.png";
 
-    // 🔹 Esconde os botões de login/cadastro no desktop
     if (window.innerWidth > 768) {
+      // Desktop
+      if (headerUser) headerUser.style.display = "flex";
       if (authButtons) authButtons.style.display = "none";
+      if (sidebarButtons) sidebarButtons.style.display = "flex";
+      if (sideUser) sideUser.style.display = "none";
+    } else {
+      if (headerUser) headerUser.style.display = "none";
+      if (sidebarButtons) sidebarButtons.style.display = "none";
+      if (sideUser) sideUser.style.display = "flex";
     }
-
-    // 🔹 Esconde botões da sidebar no mobile
-    if (sidebarButtons) sidebarButtons.style.display = "none";
   } catch (err) {
     console.error("Erro ao verificar autenticação:", err);
-
-    // 🔹 Token inválido — reseta interface
     localStorage.removeItem("token");
+
     if (headerUser) headerUser.style.display = "none";
+    if (sideUser) sideUser.style.display = "none";
 
     if (window.innerWidth > 768) {
       if (authButtons) authButtons.style.display = "flex";
+    } else {
+      if (sidebarButtons) sidebarButtons.style.display = "flex";
     }
-
-    if (sidebarButtons) sidebarButtons.style.display = "flex";
   }
 });
