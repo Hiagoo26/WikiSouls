@@ -19,28 +19,33 @@ export const getTodosPost = async (req, res) => {
   }
 };
 
-// 🔹 Buscar post por ID
+// Buscar post por ID
 export const getPostByID = async (req, res) => {
   try {
+    const { id } = req.params;
+
     const post = await prisma.post.findUnique({
-      where: { id: Number(req.params.id) },
+      where: { id: Number(id) },
       include: {
-        autor: { select: { id: true, nick: true, avatar: true } },
+        autor: {
+          select: { id: true, nick: true, avatar: true }
+        },
         comentarios: {
           include: {
             autor: { select: { id: true, nick: true, avatar: true } },
-            likes: true,
+            likes: true
           },
-          orderBy: { criadoEm: "asc" },
+          orderBy: { criadoEm: "asc" }
         },
-        likes: true,
-      },
+        likes: true
+      }
     });
 
     if (!post) return res.status(404).json({ error: "Post não encontrado" });
+
     res.json(post);
   } catch (error) {
-    console.error("Erro ao buscar post:", error);
+    console.error("Erro getPostByID:", error);
     res.status(500).json({ error: "Erro ao buscar post" });
   }
 };

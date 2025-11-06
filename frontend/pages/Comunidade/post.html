@@ -3,16 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post - WikiSouls</title>
+  <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
   <link rel="stylesheet" href="../../styles/comunidade.css">
+  <link rel="stylesheet" href="../../styles/post.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Post - WikiSouls</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-  <header class="wiki-header">
+  <header class="wiki-header" style="padding: 30px;">
+    <button class="menu-button" disabled>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448">
+        <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+      </svg>
+    </button>
     <h1>Post da Comunidade</h1>
-    <a href="comunidade.html">← Voltar</a>
+    <a href="comunidade.html" style="text-decoration: none; color: var(--firstcolor);"><i class="fa-solid fa-arrow-left"></i></a>
   </header>
 
   <main id="post-container"></main>
+  <!-- Sidebar -->
+        <div id="overlay" class="overlay hidden">
+            <aside id="sideBar" class="sideBar">
+                <i class="fa-solid fa-xmark close" id="fecharSideBar"></i>
+                <nav>
+                    <h1>Dark Souls Wiki</h1>
+                    <ul>
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="../ds1.html">Dark Souls I</a></li>
+                        <li><a href="../ds2.html">Dark Souls II</a></li>
+                        <li><a href="../ds3.html">Dark Souls III</a></li>
+                        <li><a href="comunidade.html">Comunidade</a></li>
+                    </ul>
+                    <div class="sideBar-btns">
+                        <a href="../Login/login.html" class="btnheader1">Entrar</a>
+                        <a href="../Login/login.html" class="btnheader1">Cadastre-se</a>
+                    </div>
+                    <div class="sideBar-user" style="display: none;">
+                        <img class="side-avatar" src="https://i.imgur.com/default.png" alt="Avatar">
+                        <h3 class="side-nick">Usuário</h3>
+                    </div>
+                </nav>
+            </aside>
+        </div>
 
   <section id="comentarios">
     <h2>Comentários</h2>
@@ -21,6 +54,8 @@
     <button id="enviarComentario">Enviar</button>
   </section>
 
+  <script src="../../scripts/sideBar.js"></script>
   <script src="../../scripts/post.js"></script>
 </body>
 </html>
+ 
