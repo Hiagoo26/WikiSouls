@@ -53,8 +53,16 @@ export const getPostByID = async (req, res) => {
 // Criar novo post
 export const criarPost = async (req, res) => {
   try {
-    const { titulo, conteudo, autorId } = req.body;
-    const imagemUrl = req.file ? req.file.path : req.body.imagemUrl || null;
+    let body = req.body;
+
+    // Quando vem multipart/form-data ele vem tudo como string
+    if (typeof body === "string") {
+      body = JSON.parse(body);
+    }
+
+    const { titulo, conteudo, autorId } = body;
+
+    const imagemUrl = req.file ? req.file.path : null;
 
     const novoPost = await prisma.post.create({
       data: {
@@ -65,6 +73,7 @@ export const criarPost = async (req, res) => {
       },
       include: {
         autor: { select: { id: true, nick: true, avatar: true } },
+        likes: true,
       },
     });
 

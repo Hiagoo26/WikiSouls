@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const postList = document.getElementById("post-list");
 
-  // Elementos do modal
+  // Elementos do modal de postagem
   const modal = document.getElementById("postModal");
   const openModalBtn = document.getElementById("openModal");
   const closeModalBtn = document.getElementById("closeModal");
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const imagePreviewContainer = document.getElementById("imagePreviewContainer");
   const imagePreview = document.getElementById("imagePreview");
 
-  // 🔹 Abrir e fechar modal
+  // 🔹 Abrir e fechar modal de postagem
   openModalBtn.addEventListener("click", () => modal.classList.remove("hidden"));
   closeModalBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
@@ -44,6 +44,63 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagePreview.src = "";
   }
 
+  function showCustomAlert(message) {
+    const modalBackdrop = document.createElement("div");
+    modalBackdrop.style.position = "fixed";
+    modalBackdrop.style.top = "0";
+    modalBackdrop.style.left = "0";
+    modalBackdrop.style.width = "100vw";
+    modalBackdrop.style.height = "100vh";
+    modalBackdrop.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modalBackdrop.style.display = "flex";
+    modalBackdrop.style.justifyContent = "center";
+    modalBackdrop.style.alignItems = "center";
+    modalBackdrop.style.zIndex = "10000";
+
+    const modalContent = document.createElement("div");
+    modalContent.style.backgroundColor = "var(--primarycolor)";
+    modalContent.style.padding = "20px 30px";
+    modalContent.style.borderRadius = "8px";
+    modalContent.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
+    modalContent.style.maxWidth = "90%";
+    modalContent.style.width = "300px";
+    modalContent.style.textAlign = "center";
+
+    const modalMessage = document.createElement("p");
+    modalMessage.textContent = message;
+    modalMessage.style.margin = "0 0 15px 0";
+    modalMessage.style.fontSize = "16px";
+    modalMessage.style.color = "white";
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "Fechar";
+    closeButton.style.padding = "8px 16px";
+    closeButton.style.backgroundColor = "var(--firstcolor)";
+    closeButton.style.color = "white";
+    closeButton.style.border = "none";
+    closeButton.style.borderRadius = "5px";
+    closeButton.style.cursor = "pointer";
+    closeButton.style.fontSize = "14px";
+
+    modalContent.appendChild(modalMessage);
+    modalContent.appendChild(closeButton);
+    modalBackdrop.appendChild(modalContent);
+
+    document.body.appendChild(modalBackdrop);
+
+    function closeModal() {
+      document.body.removeChild(modalBackdrop);
+    }
+
+    closeButton.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", (event) => {
+      // Fecha só se clicar no backdrop (fundo), não no conteúdo
+      if (event.target === modalBackdrop) {
+        closeModal();
+      }
+    });
+  }
+
   // 🔹 Função para carregar posts
   async function carregarPosts() {
     try {
@@ -58,9 +115,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       postList.innerHTML = posts.map(post => `
         <article class="post" onclick="window.location.href='post.html?id=${post.id}'">
           <div class="post-header">
-            <img src="${post.autor.avatar}" alt="Avatar" class="avatar">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <img src="${post.autor.avatar}" alt="Avatar" class="avatar">
+               <h3 class="username">${post.autor.nick}</h3>
+            </div>
             <div>
-              <h3 class="username">${post.autor.nick}</h3>
               <span class="date">${new Date(post.criadoEm).toLocaleDateString()}</span>
             </div>
           </div>
@@ -70,7 +129,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           ${post.imagemUrl ? `<img src="${post.imagemUrl}" class="post-image">` : ""}
           <div class="post-footer">
             <span><i class="fa-regular fa-comment"></i> Comentários (${post._count.comentarios})</span>
-            <span><i class="fa-regular fa-thumbs-up"></i> Likes (${post._count.likes})</span>
+            <span><i class="fa-regular fa-thumbs-up"></i> Curtidas (${post._count.likes})</span>
           </div>
         </article>
       `).join("");
@@ -89,12 +148,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
 
     if (!user || !token) {
-      alert("Você precisa estar logado!");
+      showCustomAlert("Você precisa estar logado!");
       return;
     }
 
     if (!conteudo && !imagem) {
-      alert("Escreva algo ou adicione uma imagem!");
+      showCustomAlert("Escreva algo ou adicione uma imagem!");
       return;
     }
 
@@ -114,7 +173,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!res.ok) {
         const err = await res.json();
         console.error("Erro ao postar:", err);
-        alert("Erro ao criar post.");
+
+        showCustomAlert("Erro ao criar post.");
         return;
       }
 
@@ -124,7 +184,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       carregarPosts();
     } catch (error) {
       console.error("Erro ao enviar post:", error);
-      alert("Erro ao enviar post.");
+      showCustomAlert("Erro ao enviar post.");
     }
   });
 
