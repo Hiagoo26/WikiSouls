@@ -34,13 +34,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!res.ok) throw new Error("Falha ao buscar usuário.");
     const user = await res.json();
 
-    if (userNick) userNick.textContent = user.nick || user.email || "Usuário";
-    if (userAvatar)
-      userAvatar.src = user.avatar || "https://i.imgur.com/default.png";
+    const profileUrl = `perfil.html?id=${user.id}`;
 
-    if (sideNick) sideNick.textContent = user.nick || user.email || "Usuário";
-    if (sideAvatar)
+    if (userNick) {
+      userNick.textContent = user.nick || user.email || "Usuário";
+      if (userNick.parentElement && userNick.parentElement.tagName === 'A') {
+        userNick.parentElement.href = profileUrl;
+      }
+    }
+
+    if (userAvatar) {
+      userAvatar.src = user.avatar || "https://i.imgur.com/default.png";
+      if (userAvatar.parentElement && userAvatar.parentElement.tagName === 'A') {
+        userAvatar.parentElement.href = profileUrl;
+      }
+    }
+
+    if (sideNick) {
+      sideNick.textContent = user.nick || user.email || "Usuário";
+    }
+    
+    if (sideAvatar) {
       sideAvatar.src = user.avatar || "https://i.imgur.com/default.png";
+    }
+
+    if (sideUser && sideUser.parentElement && sideUser.parentElement.tagName === 'A') {
+      sideUser.parentElement.href = profileUrl;
+    }
 
     if (window.innerWidth > 768) {
       // Desktop

@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const postList = document.getElementById("post-list");
+  const rankingList = document.getElementById("ranking-list"); // 👈 NOVO: Pega a lista do ranking
 
   // Elementos do modal de postagem
   const modal = document.getElementById("postModal");
@@ -12,14 +13,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const imagePreviewContainer = document.getElementById("imagePreviewContainer");
   const imagePreview = document.getElementById("imagePreview");
 
-  // 🔹 Abrir e fechar modal de postagem
+  // Abrir e fechar modal de postagem
   openModalBtn.addEventListener("click", () => modal.classList.remove("hidden"));
   closeModalBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
     limparCampos();
   });
 
-  // 🔹 Pré-visualização da imagem
+  // Pré-visualização da imagem
   postImage.addEventListener("change", (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // 🔹 Função para limpar campos
+  // Função para limpar campos
   function limparCampos() {
     postTitle.value = "";
     postText.value = "";
@@ -43,6 +44,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagePreviewContainer.classList.add("hidden");
     imagePreview.src = "";
   }
+  
+  // 👈 NOVO: Função de segurança para HTML
+  function escapeHtml(str) {
+    if (!str) return "";
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
 
   function showCustomAlert(message) {
     const modalBackdrop = document.createElement("div");
@@ -94,38 +107,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     closeButton.addEventListener("click", closeModal);
     modalBackdrop.addEventListener("click", (event) => {
-      // Fecha só se clicar no backdrop (fundo), não no conteúdo
       if (event.target === modalBackdrop) {
         closeModal();
       }
     });
   }
 
-  // 🔹 Função para carregar posts
-  async function carregarPosts() {
+  // Função para carregar posts e o ranking
+  async function carregarConteudo() {
     try {
       const res = await fetch("http://localhost:2611/api/post");
       const posts = await res.json();
 
       if (!Array.isArray(posts) || posts.length === 0) {
         postList.innerHTML = "<p>Nenhum post encontrado.</p>";
+        rankingList.innerHTML = "<li>Nenhum post para classificar.</li>"; // 👈 NOVO
         return;
       }
+
+      const rankedPosts = [...posts].sort((a, b) => b._count.likes - a._count.likes);
+      const top10 = rankedPosts.slice(0, 10);
+
+      rankingList.innerHTML = top10.map(post => {
+        const titulo = escapeHtml(post.titulo) || "Post sem título";
+        return `<li><a href="post.html?id=${post.id}">${titulo}</a></li>`;
+      }).join('');
 
       postList.innerHTML = posts.map(post => `
         <article class="post" onclick="window.location.href='post.html?id=${post.id}'">
           <div class="post-header">
             <div style="display:flex; gap:10px; align-items:center;">
               <img src="${post.autor.avatar}" alt="Avatar" class="avatar">
-               <h3 class="username">${post.autor.nick}</h3>
+              <a href="perfil.html?id=${post.autor.id}" onclick="event.stopPropagation()" style="text-decoration: none; color: inherit;">
+                <h3 class="username">${post.autor.nick}</h3>
+              </a>
             </div>
             <div>
               <span class="date">${new Date(post.criadoEm).toLocaleDateString()}</span>
             </div>
           </div>
-
-          ${post.titulo ? `<h4 class="post-title">${post.titulo}</h4>` : ""}
-          <p class="content">${post.conteudo}</p>
+          ${post.titulo ? `<h4 class="post-title">${escapeHtml(post.titulo)}</h4>` : ""}
+          <p class="content">${escapeHtml(post.conteudo)}</p>
           ${post.imagemUrl ? `<img src="${post.imagemUrl}" class="post-image">` : ""}
           <div class="post-footer">
             <span><i class="fa-regular fa-comment"></i> Comentários (${post._count.comentarios})</span>
@@ -133,13 +155,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
         </article>
       `).join("");
+
     } catch (err) {
-      console.error("Erro ao carregar posts:", err);
+      console.error("Erro ao carregar conteúdo:", err);
       postList.innerHTML = "<p>Erro ao carregar posts.</p>";
+      rankingList.innerHTML = "<li>Erro ao carregar ranking.</li>";
     }
   }
 
-  // 🔹 Publicar novo post
+  // Publicar novo post
   publishBtn.addEventListener("click", async () => {
     const titulo = postTitle.value.trim();
     const conteudo = postText.value.trim();
@@ -173,20 +197,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!res.ok) {
         const err = await res.json();
         console.error("Erro ao postar:", err);
-
         showCustomAlert("Erro ao criar post.");
         return;
       }
 
-      console.log("Post criado:", await res.json());
       limparCampos();
       modal.classList.add("hidden");
-      carregarPosts();
+      carregarConteudo(); // Recarrega os posts e o ranking
     } catch (error) {
       console.error("Erro ao enviar post:", error);
       showCustomAlert("Erro ao enviar post.");
     }
   });
 
-  carregarPosts();
+  carregarConteudo(); // Chama a função principal que carrega tudo
 });

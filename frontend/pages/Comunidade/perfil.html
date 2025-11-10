@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <title>Perfil - WikiSouls</title>
+  <link rel="shortcut icon" href="../../assets/icons/fogueira.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../styles/comunidade.css">
+  <link rel="stylesheet" href="../../styles/perfil.css">
+  <link rel="stylesheet" href="../../styles/user.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="wiki-header">
+    <button class="menu-button" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448">
+            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+          </svg>
+      </button>
+    <h1>Dark Souls Wiki</h1>
+    <a href="comunidade.html" style="text-decoration: none; color: var(--firstcolor);"><i class="fa-solid fa-arrow-left"></i></a>
+  </header>
+
+  <div id="overlay" class="overlay hidden">
+    <aside id="sideBar" class="sideBar">
+      <i class="fa-solid fa-xmark close" id="fecharSideBar"></i>
+      <nav>
+        <h1>Dark Souls Wiki</h1>
+        <ul>
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="../ds1.html">Dark Souls I</a></li>
+          <li><a href="../ds2.html">Dark Souls II</a></li>
+          <li><a href="../ds3.html">Dark Souls III</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <main class="wiki-container perfil-page">
+    <div class="perfil-grid-container">
+
+      <aside class="perfil-info-box">
+        <div class="avatar-wrap">
+          <img src="https://i.imgur.com/default.png" alt="Avatar do Usuário" class="perfil-avatar" id="perfilAvatar">
+          <button class="btn small upload-avatar-btn hidden" id="btnOpenAvatarModal" title="Trocar avatar"><i class="fa-solid fa-camera"></i></button>
+        </div>
+
+        <h2 class="perfil-nick" id="perfilNick">—</h2>
+        <div class="perfil-badges" id="perfilBadges"></div>
+
+        <p class="perfil-desc" id="perfilDesc">Carregando descrição…</p>
+
+        <div class="perfil-stats">
+          <div class="stat-item">
+            <strong id="countSeguidores">0</strong>
+            <span>Seguidores</span>
+          </div>
+          <div class="stat-item">
+            <strong id="countSeguindo">0</strong>
+            <span>Seguindo</span>
+          </div>
+          <div class="stat-item">
+            <strong id="countPosts">0</strong>
+            <span>Posts</span>
+          </div>
+        </div>
+
+        <div class="perfil-actions">
+          <button class="btn primary" id="btnSeguir" style="border: none;">Seguir</button>
+          <button class="btn outline hidden" id="btnEditarPerfil">Editar Perfil</button>
+        </div>
+      </aside>
+
+      <section class="perfil-posts-lista" id="perfilPostsLista">
+        <h3>Posts</h3>
+        <div id="postsContainer">Carregando posts...</div>
+      </section>
+    </div>
+  </main>
+
+  <!-- MODAL: Editar Perfil (bio + status) -->
+  <div id="modalEditPerfil" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3>Editar Perfil</h3>
+      <label>Título / Apelido</label>
+      <input id="inputNick" class="modal-input" placeholder="Nick (opcional)">
+      <label>Descrição (bio)</label>
+      <textarea id="inputBio" class="modal-textarea" rows="4" placeholder="Fale um pouco sobre você..."></textarea>
+      <label>Status</label>
+      <select id="selectStatus" class="modal-select">
+        <option value="">-- Selecionar --</option>
+        <option value="ONLINE">Online</option>
+        <option value="OFFLINE">Offline</option>
+        <option value="AUSENTE">Ausente</option>
+        <option value="INVISIVEL">Invisível</option>
+      </select>
+
+      <div class="modal-actions">
+        <button class="btn cancel" id="btnCloseEdit">Cancelar</button>
+        <button class="btn primary" id="btnSaveEdit">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Upload Avatar -->
+  <div id="modalAvatar" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3>Trocar Avatar</h3>
+      <input type="file" id="fileAvatar" accept="image/*" style="display: none;">
+
+      <label for="fileAvatar" class="btn outline file-upload-label">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        Escolher Arquivo...
+      </label>
+
+      <span id="fileNameDisplay" class="file-name-display">Nenhum arquivo selecionado</span>
+
+      <div class="preview-row" id="avatarPreviewRow" style="display:none;">
+        <img id="avatarPreview" style="max-width:140px;border-radius:10px;margin-top:10px;">
+      </div>
+      <div class="modal-actions">
+        <button class="btn cancel" id="btnCloseAvatar">Cancelar</button>
+        <button class="btn primary" id="btnUploadAvatar">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Login Required -->
+  <div id="modalLoginRequired" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h3>Login necessário</h3>
+      <p>Você precisa estar logado para realizar esta ação.</p>
+      <div class="modal-actions">
+        <button class="btn cancel" id="btnCloseLoginReq">Fechar</button>
+        <button class="btn primary" id="btnGoLogin">Ir para login</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>Comunidade WikiSouls © 2025</p>
+  </footer>
+
+  <script src="../../scripts/sideBar.js"></script>
+  <script src="../../scripts/perfil.js"></script>
+</body>
+</html>
