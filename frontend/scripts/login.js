@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-const API_BASE = "http://localhost:2611/api/auth";
+const API_BASE = "https://wikisouls-production.up.railway.app/api/auth";
 
 document.addEventListener("DOMContentLoaded", () => {
   // elements

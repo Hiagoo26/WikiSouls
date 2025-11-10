@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const API = "http://localhost:2611/api/post";
+  const API = "https://wikisouls-production.up.railway.app/api/post";
+
 
   if (!postId) {
     container.innerHTML = "<p>Post não encontrado.</p>";
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!url) return null;
     if (url.startsWith("http://") || url.startsWith("https://")) return url;
     const cleanUrl = url.replace(/\\/g, "/").replace(/^\/+/, "");
-    return `http://localhost:2611/${cleanUrl}`;
+    return `https://wikisouls-production.up.railway.app/${cleanUrl}`;
   }
 
   // CARREGA POST
