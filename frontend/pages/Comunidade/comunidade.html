@@ -162,7 +162,7 @@
 
         try {
             // 🔹 Busca os dados do usuário logado
-            const res = await fetch("http://localhost:2611/api/auth/eu", {
+            const res = await fetch("https://wikisouls-production.up.railway.app/api/auth/eu", {
             headers: { "Authorization": `Bearer ${token}` }
             });
 
