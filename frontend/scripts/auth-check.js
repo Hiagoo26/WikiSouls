@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch("https://wikisouls-production.up.railway.app/api/auth/eu", {
+    const res = await fetch("wikisouls-production.up.railway.app/api/auth/eu", {
       headers: { Authorization: `Bearer ${token}` },
     });
 

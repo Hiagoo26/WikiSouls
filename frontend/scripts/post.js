@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const API = "https://wikisouls-production.up.railway.app/api/post";
+  const API = "wikisouls-production.up.railway.app/api/post";
 
 
   if (!postId) {

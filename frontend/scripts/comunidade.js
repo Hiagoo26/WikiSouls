@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Função para carregar posts e o ranking
   async function carregarConteudo() {
     try {
-      const res = await fetch("https://wikisouls-production.up.railway.app/api/post");
+      const res = await fetch("wikisouls-production.up.railway.app/api/post");
       const posts = await res.json();
 
       if (!Array.isArray(posts) || posts.length === 0) {
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (imagem) formData.append("imagem", imagem);
 
     try {
-      const res = await fetch("https://wikisouls-production.up.railway.app/api/post", {
+      const res = await fetch("wikisouls-production.up.railway.app/api/post", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
