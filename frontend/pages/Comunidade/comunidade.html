@@ -155,6 +155,9 @@
         const saveBtn = document.getElementById("saveProfile");
         const token = localStorage.getItem("token");
 
+        // 1. Define a URL de produção
+        const baseUrl = "https://wikisouls-production.up.railway.app";
+
         if (!token) {
             modal.style.display = "none";
             return;
@@ -162,71 +165,86 @@
 
         try {
             // 🔹 Busca os dados do usuário logado
-            const res = await fetch("http://localhost:2611/api/auth/eu", {
-            headers: { "Authorization": `Bearer ${token}` }
+            const res = await fetch(`${baseUrl}/api/auth/eu`, {
+                headers: { "Authorization": `Bearer ${token}` },
+                cache: "no-store" // 2. CORREÇÃO DO CACHE APLICADA
             });
 
             if (!res.ok) throw new Error("Falha ao verificar usuário.");
             const user = await res.json();
 
+            // Lógica para mostrar o modal
             if (
-            user.nick === "Usuário" ||
-            user.nick.startsWith("Usuário") ||
-            !user.avatar ||
-            user.avatar.includes("default.png")
+                user.nick === "Usuário" ||
+                user.nick.startsWith("Usuário") ||
+                !user.avatar ||
+                user.avatar.includes("default.png")
             ) {
-            modal.style.display = "flex";
+                modal.style.display = "flex";
             } else {
-            modal.style.display = "none";
-            localStorage.removeItem("needsSetup");
+                modal.style.display = "none";
+                localStorage.removeItem("needsSetup");
             }
 
             // Preview da imagem
             avatarInput.addEventListener("change", () => {
-            const file = avatarInput.files[0];
-            if (file) avatarPreview.src = URL.createObjectURL(file);
+                const file = avatarInput.files[0];
+                if (file) avatarPreview.src = URL.createObjectURL(file);
             });
 
-            // Botão salvar perfil
+            // 3. CORREÇÃO DO BOTÃO SALVAR (COM TRY...CATCH)
             saveBtn.addEventListener("click", async () => {
-            const nick = nickInput.value.trim();
-            if (!nick) return alert("Digite um nickname!");
+                const nick = nickInput.value.trim();
+                if (!nick) return alert("Digite um nickname!");
 
-            // Atualiza nick
-            const resNick = await fetch("http://localhost:2611/api/user/nick", {
-                method: "PATCH",
-                headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify({ nick })
+                try {
+                    // Atualiza nick
+                    const resNick = await fetch(`${baseUrl}/api/user/nick`, {
+                        method: "PATCH",
+                        headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ nick })
+                    });
+
+                    if (!resNick.ok) {
+                        const erro = await resNick.json();
+                        throw new Error(erro.erro || "Erro ao salvar nickname");
+                    }
+
+                    // Atualiza avatar se tiver imagem
+                    if (avatarInput.files.length > 0) {
+                        const formData = new FormData();
+                        formData.append("imagem", avatarInput.files[0]);
+                        
+                        const resAvatar = await fetch(`${baseUrl}/api/user/avatar`, {
+                            method: "POST",
+                            headers: { "Authorization": `Bearer ${token}` },
+                            body: formData
+                        });
+
+                        if (!resAvatar.ok) {
+                            const erro = await resAvatar.json();
+                            throw new Error(erro.erro || "Erro ao salvar avatar");
+                        }
+                    }
+
+                    // Feedback e fechamento suave
+                    alert("Perfil atualizado com sucesso!");
+                    modal.style.opacity = "0";
+                    setTimeout(() => {
+                        modal.style.display = "none";
+                        localStorage.removeItem("needsSetup");
+                        location.reload();
+                    }, 300);
+
+                } catch (err) {
+                    alert(err.message);
+                    console.error("Erro ao salvar perfil:", err);
+                }
             });
 
-            if (!resNick.ok) {
-                const erro = await resNick.json();
-                return alert(erro.erro || "Erro ao salvar nickname");
-            }
-
-            // Atualiza avatar se tiver imagem
-            if (avatarInput.files.length > 0) {
-                const formData = new FormData();
-                formData.append("imagem", avatarInput.files[0]);
-                await fetch("http://localhost:2611/api/user/avatar", {
-                method: "POST",
-                headers: { "Authorization": `Bearer ${token}` },
-                body: formData
-                });
-            }
-
-            // Feedback e fechamento suave
-            alert("Perfil atualizado com sucesso!");
-            modal.style.opacity = "0";
-            setTimeout(() => {
-                modal.style.display = "none";
-                localStorage.removeItem("needsSetup");
-                location.reload();
-            }, 300);
-            });
         } catch (err) {
             console.error("Erro ao carregar perfil:", err);
         }
