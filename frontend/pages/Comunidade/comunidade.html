@@ -193,7 +193,7 @@
             if (!nick) return alert("Digite um nickname!");
 
             // Atualiza nick
-            const resNick = await fetch("http://localhost:2611/api/user/nick", {
+            const resNick = await fetch("https://wikisouls-production.up.railway.app/api/user/nick", {
                 method: "PATCH",
                 headers: {
                 "Content-Type": "application/json",
