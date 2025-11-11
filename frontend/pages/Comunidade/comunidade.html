@@ -211,7 +211,7 @@
             if (avatarInput.files.length > 0) {
                 const formData = new FormData();
                 formData.append("imagem", avatarInput.files[0]);
-                await fetch("http://localhost:2611/api/user/avatar", {
+                await fetch("https://wikisouls-production.up.railway.app/api/user/avatar", {
                 method: "POST",
                 headers: { "Authorization": `Bearer ${token}` },
                 body: formData
