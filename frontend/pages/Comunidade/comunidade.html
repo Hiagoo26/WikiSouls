@@ -162,9 +162,8 @@
 
         try {
             // 🔹 Busca os dados do usuário logado
-            const res = await fetch("https://wikisouls-production.up.railway.app/api/auth/eu", {
-            headers: { "Authorization": `Bearer ${token}` },
-            cache: "no-store"
+            const res = await fetch("http://localhost:2611/api/auth/eu", {
+            headers: { "Authorization": `Bearer ${token}` }
             });
 
             if (!res.ok) throw new Error("Falha ao verificar usuário.");
@@ -194,7 +193,7 @@
             if (!nick) return alert("Digite um nickname!");
 
             // Atualiza nick
-            const resNick = await fetch("https://wikisouls-production.up.railway.app/api/user/nick", {
+            const resNick = await fetch("http://localhost:2611/api/user/nick", {
                 method: "PATCH",
                 headers: {
                 "Content-Type": "application/json",
@@ -212,7 +211,7 @@
             if (avatarInput.files.length > 0) {
                 const formData = new FormData();
                 formData.append("imagem", avatarInput.files[0]);
-                await fetch("https://wikisouls-production.up.railway.app/api/user/avatar", {
+                await fetch("http://localhost:2611/api/user/avatar", {
                 method: "POST",
                 headers: { "Authorization": `Bearer ${token}` },
                 body: formData
