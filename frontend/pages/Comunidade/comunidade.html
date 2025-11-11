@@ -163,7 +163,8 @@
         try {
             // 🔹 Busca os dados do usuário logado
             const res = await fetch("https://wikisouls-production.up.railway.app/api/auth/eu", {
-            headers: { "Authorization": `Bearer ${token}` }
+            headers: { "Authorization": `Bearer ${token}` },
+            cache: "no-store"
             });
 
             if (!res.ok) throw new Error("Falha ao verificar usuário.");
