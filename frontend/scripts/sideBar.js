@@ -65,10 +65,12 @@ overlay.addEventListener("click", (e) => {
     }
 })
 
-btnLogin.addEventListener("click", () => {
-    fechaSideBar();
-    abrirLogin();
-});
+if (btnLogin) {
+    btnLogin.addEventListener("click", () => {
+        fechaSideBar();
+        abrirLogin();
+    });
+}
 
 btnCadastro.addEventListener("click", () => {
     fechaSideBar();
