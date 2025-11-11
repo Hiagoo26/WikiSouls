@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-const API_BASE = "wikisouls-production.up.railway.app/api/auth";
+const API_BASE = "https://wikisouls-production.up.railway.app/api/auth";
 
 document.addEventListener("DOMContentLoaded", () => {
   // elements

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const BASE = "wikisouls-production.up.railway.app";
+  const BASE = "https://wikisouls-production.up.railway.app";
   const API = `${BASE}/api/user`;
   const params = new URLSearchParams(window.location.search);
   const profileId = params.get("id");
